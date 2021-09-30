@@ -1,0 +1,784 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _mdbreact = require("mdbreact");
+class RevHomeLatestReview extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            papers: [],
+            workshops: []
+        };
+    }
+    componentDidMount() {
+        this.retrevePapers();
+    }
+    retrevePapers() {
+        _axiosDefault.default.get("http://localhost:8000/rev/researchpaper/last/_id").then((res)=>{
+            if (res.data.success) {
+                this.setState({
+                    papers: res.data.existingPapers
+                });
+                console.log(this.state.papers);
+            }
+        });
+        _axiosDefault.default.get("http://localhost:8000/rev/workshopproposal/last/_id").then((res)=>{
+            if (res.data.success) {
+                this.setState({
+                    workshops: res.data.existingWorkshops
+                });
+                console.log(this.state.workshops);
+            }
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                lineNumber: 48
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row row-cols-1 row-cols-md-2",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                lineNumber: 49
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-6",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                lineNumber: 50
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            wide: true,
+            cascade: true,
+            className: "card-image",
+            style: {
+                backgroundImage: 'url(https://image.freepik.com/free-vector/white-abstract-background_23-2148882948.jpg)',
+                width: "100vh",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                lineNumber: 51
+            },
+            __self: this
+        }, this.state.papers.map((papers)=>/*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+                cascade: true,
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 64
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 66
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+                md: "8",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 67
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 68
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 69
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 70
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 71
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+                className: "text-center font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 72
+                },
+                __self: this
+            }, papers.mTitle)))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 76
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 77
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 78
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 79
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 80
+                },
+                __self: this
+            }), " Author"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 84
+                },
+                __self: this
+            }, papers.author), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 87
+                },
+                __self: this
+            }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 88
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 89
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 90
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 91
+                },
+                __self: this
+            }), " Abstract"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 95
+                },
+                __self: this
+            }, papers.abstract), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 98
+                },
+                __self: this
+            }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 99
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 100
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 101
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 102
+                },
+                __self: this
+            }), " Category"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 106
+                },
+                __self: this
+            }, papers.category), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 109
+                },
+                __self: this
+            }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 110
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 111
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 112
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 113
+                },
+                __self: this
+            }), " Keyword"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 117
+                },
+                __self: this
+            }, papers.keyword)))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+                md: "4",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 123
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 124
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 125
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 126
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 127
+                },
+                __self: this
+            }, "Contact Details"))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 130
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 131
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 132
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 133
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "user",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 134
+                },
+                __self: this
+            }), " ", papers.first_name, " ", papers.last_name))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 139
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 140
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 141
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "envelope",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 142
+                },
+                __self: this
+            }), " ", papers.userId))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 146
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 147
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 148
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "phone",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 149
+                },
+                __self: this
+            }), " ", papers.con_number))))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardHeader, {
+                className: "form-header blue-grey rounded",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 155
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+                className: "my-3 black-text",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 156
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "file-alt",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 157
+                },
+                __self: this
+            }), " ", papers.status)))))
+        ))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-6",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                lineNumber: 166
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            wide: true,
+            cascade: true,
+            className: "card-image",
+            style: {
+                backgroundImage: 'url(https://image.freepik.com/free-vector/white-abstract-background_23-2148882948.jpg)',
+                width: "100vh",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                lineNumber: 168
+            },
+            __self: this
+        }, this.state.workshops.map((workshops)=>/*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+                cascade: true,
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 180
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 182
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+                md: "8",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 183
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 184
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 185
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 186
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 187
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+                className: "text-center font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 188
+                },
+                __self: this
+            }, workshops.wTitle)))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 192
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 193
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 194
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 195
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 196
+                },
+                __self: this
+            }), " Presenter"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 200
+                },
+                __self: this
+            }, workshops.pName), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 203
+                },
+                __self: this
+            }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 204
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 205
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 206
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 207
+                },
+                __self: this
+            }), " Category"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 211
+                },
+                __self: this
+            }, workshops.category), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 214
+                },
+                __self: this
+            }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 215
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 216
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 217
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 218
+                },
+                __self: this
+            }), " WorkShop Goal"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 222
+                },
+                __self: this
+            }, workshops.wGoal), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 225
+                },
+                __self: this
+            }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 226
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 227
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 228
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "hand-point-right fa-lg",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 229
+                },
+                __self: this
+            }), " Audiance"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 233
+                },
+                __self: this
+            }, workshops.tAudience)))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+                md: "4",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 239
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 240
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 241
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 242
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+                className: "font-weight-bold",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 243
+                },
+                __self: this
+            }, "Contact Details"))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 246
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 247
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 248
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 249
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "user",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 250
+                },
+                __self: this
+            }), " ", workshops.first_name, " ", workshops.last_name))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 255
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 256
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 257
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "envelope",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 258
+                },
+                __self: this
+            }), " ", workshops.userId))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 262
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 263
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 264
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "phone",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 265
+                },
+                __self: this
+            }), " ", workshops.con_number))))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardHeader, {
+                className: "form-header blue-grey rounded",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 271
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+                className: "my-3 black-text",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 272
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+                icon: "file-alt",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeLatestReview.jsx",
+                    lineNumber: 273
+                },
+                __self: this
+            }), " ", workshops.status)))))
+        ))))));
+    }
+}
+exports.default = RevHomeLatestReview;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

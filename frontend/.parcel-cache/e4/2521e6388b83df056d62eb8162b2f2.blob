@@ -1,0 +1,62 @@
+var helpers = require("../../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class Rnotifications extends _react.Component {
+    constructor(){
+        super();
+        this.state = {
+            AllNotify: []
+        };
+    }
+    componentDidMount() {
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        _axiosDefault.default.get(`http://localhost:5050/researchpaper/notification/${decode.email}`).then((res)=>{
+            if (res.data.success) this.setState({
+                AllNotify: res.data.existingPapers
+            });
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("button", {
+            type: "button",
+            class: "btn btn-success btn-sm",
+            style: {
+                marginTop: "0rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\Rnotifications.js",
+                lineNumber: 36
+            },
+            __self: this
+        }, "Notifications ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "badge badge-light",
+            style: {
+                fontSize: "15px"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\Rnotifications.js",
+                lineNumber: 37
+            },
+            __self: this
+        }, this.state.AllNotify.length)));
+    }
+}
+exports.default = Rnotifications;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

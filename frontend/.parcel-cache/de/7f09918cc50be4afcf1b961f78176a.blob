@@ -1,0 +1,219 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _coverImage = require("../Decorate Component/CoverImage");
+var _coverImageDefault = parcelHelpers.interopDefault(_coverImage);
+var _attention = require("../Decorate Component/Attention");
+var _attentionDefault = parcelHelpers.interopDefault(_attention);
+var _socialMedia = require("../Decorate Component/SocialMedia");
+var _socialMediaDefault = parcelHelpers.interopDefault(_socialMedia);
+var _reactRouterDom = require("react-router-dom");
+var _mdbreact = require("mdbreact");
+var _userApprovedPaidPaper = require("./UserApprovedPaidPaper");
+var _userApprovedPaidPaperDefault = parcelHelpers.interopDefault(_userApprovedPaidPaper);
+var _userApprovedNotPaidPaper = require("./UserApprovedNotPaidPaper");
+var _userApprovedNotPaidPaperDefault = parcelHelpers.interopDefault(_userApprovedNotPaidPaper);
+class AllApproves extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+        };
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 23
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            style: {
+                marginTop: "3rem"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 24
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 25
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_coverImageDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 26
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 28
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 29
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 30
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 31
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "8",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 32
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            wide: true,
+            cascade: true,
+            className: "card-image",
+            style: {
+                backgroundImage: "url(https://image.freepik.com/free-vector/white-abstract-background_23-2148882948.jpg)",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 33
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            cascade: true,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 44
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 45
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "20",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 46
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_userApprovedNotPaidPaperDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 47
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_userApprovedPaidPaperDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 49
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 52
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 53
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 54
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 55
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 56
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 61
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 62
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_attentionDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 63
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 65
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 66
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_socialMediaDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 67
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\AllApprovePapers.js",
+                lineNumber: 71
+            },
+            __self: this
+        }))))));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(AllApproves);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

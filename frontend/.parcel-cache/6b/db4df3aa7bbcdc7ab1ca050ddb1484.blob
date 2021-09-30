@@ -1,0 +1,196 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+//import logo from 'url:./avatar.png';
+//<img src={logo} />
+const initialstate = {
+    title: "",
+    date: "",
+    description: "",
+    type: "",
+    speaker: ""
+};
+class CreateConference extends _react.Component {
+    constructor(props){
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this);
+        this.state = initialstate;
+    }
+    onChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+    onSubmit(e) {
+        e.preventDefault();
+        let category = {
+            title: this.state.title,
+            date: this.state.date,
+            description: this.state.description,
+            type: "pending",
+            speaker: this.state.speaker
+        };
+        console.log(category);
+        _axiosDefault.default.post("http://localhost:5001/conference/createconference", category).then((response)=>{
+            alert("inserted");
+            console.log(response);
+            window.location = "/list-conference";
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 48
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 49
+            },
+            __self: this
+        }, "Create conference"), /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            onSubmit: this.onSubmit,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 50
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "mb-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 51
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            htmlFor: "subjectName",
+            className: "form-label",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 52
+            },
+            __self: this
+        }, "Title"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "text",
+            className: "form-control",
+            id: "title",
+            name: "title",
+            value: this.state.title,
+            onChange: this.onChange,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 55
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "mb-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 65
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            htmlFor: "subjectName",
+            className: "form-label",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 66
+            },
+            __self: this
+        }, "Date"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "text",
+            className: "form-control",
+            id: "date",
+            name: "date",
+            value: this.state.date,
+            onChange: this.onChange,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 69
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "mb-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 79
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            htmlFor: "subjectName",
+            className: "form-label",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 80
+            },
+            __self: this
+        }, "Description"), /*#__PURE__*/ _reactDefault.default.createElement("textarea", {
+            type: "textarea",
+            className: "form-control",
+            id: "description",
+            name: "description",
+            value: this.state.description,
+            onChange: this.onChange,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 83
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "mb-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 93
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            htmlFor: "subjectName",
+            className: "form-label",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 94
+            },
+            __self: this
+        }, "Speaker"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "text",
+            className: "form-control",
+            id: "speaker",
+            name: "speaker",
+            value: this.state.speaker,
+            onChange: this.onChange,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 97
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            type: "submit",
+            className: "btn btn-primary",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\create\\createconference.js",
+                lineNumber: 107
+            },
+            __self: this
+        }, "Submit"))));
+    }
+}
+exports.default = CreateConference;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

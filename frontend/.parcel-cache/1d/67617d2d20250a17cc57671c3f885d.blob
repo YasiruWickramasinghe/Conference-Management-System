@@ -1,0 +1,215 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+var _rnotifications = require("../Researcher/RNotifications/Rnotifications");
+var _rnotificationsDefault = parcelHelpers.interopDefault(_rnotifications);
+class NavBar extends _react.Component {
+    logOut(e) {
+        e.preventDefault();
+        localStorage.removeItem("usertoken");
+        this.props.history.push(`/user/userLogin`);
+    }
+    render() {
+        const notLogin = /*#__PURE__*/ _reactDefault.default.createElement("ul", {
+            className: "navbar-nav",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 20
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 21
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 22
+            },
+            __self: this
+        }, "Home")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 26
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/user/userSignup",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 27
+            },
+            __self: this
+        }, "Signup")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 32
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/user/userLogin",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 33
+            },
+            __self: this
+        }, "Login")));
+        const userLogin = /*#__PURE__*/ _reactDefault.default.createElement("ul", {
+            className: "navbar-nav",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 43
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 44
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/user/userDashboard",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 45
+            },
+            __self: this
+        }, "Dashboard")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 49
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/user/userPapersRetrieve",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 50
+            },
+            __self: this
+        }, "Pending & Denied Papers")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 55
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/user/allApprovedPapers",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 56
+            },
+            __self: this
+        }, "Approved Papers")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 61
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/user/RpaperInsert",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 62
+            },
+            __self: this
+        }, "New Paper")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 67
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "/user/userLogin",
+            onClick: this.logOut.bind(this),
+            className: "nav-link",
+            to: "/Login",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 68
+            },
+            __self: this
+        }, "Logout")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 72
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "nav-link",
+            to: "/user/rnotifications",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 73
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_rnotificationsDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 74
+            },
+            __self: this
+        }))));
+        return(/*#__PURE__*/ _reactDefault.default.createElement("nav", {
+            className: "navbar navbar-expand-sm navbar-dark bg-dark mb-3 fixed-top",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 82
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 83
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            className: "navbar-brand",
+            to: "/",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UsersNavBar.js",
+                lineNumber: 84
+            },
+            __self: this
+        }, "Welcome To CMS"), localStorage.usertoken ? userLogin : notLogin)));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(NavBar);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,55 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "register", ()=>register
+);
+parcelHelpers.export(exports, "login", ()=>login
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+const register = (newUser)=>{
+    return _axiosDefault.default.post("http://localhost:5050/users/registerUser", {
+        first_name: newUser.first_name,
+        last_name: newUser.last_name,
+        con_number: newUser.con_number,
+        position: newUser.position,
+        register_fee: newUser.register_fee,
+        email: newUser.email,
+        password: newUser.password
+    }).then((res)=>{
+        window.alert("Registered Successfully");
+        return res.data;
+    });
+};
+const login = (user)=>{
+    console.log(user);
+    return _axiosDefault.default.post("http://localhost:5050/users/loginUser", {
+        email: user.email,
+        password: user.password
+    }).then((res)=>{
+        localStorage.setItem("usertoken", res.data);
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        console.log(decode.position);
+        if (decode.position == "Researcher") localStorage.setItem("Reasearcher", true);
+        else if (decode.position == "Workshop Presenter") localStorage.setItem("Workshop_Presenter", true);
+        return decode.position;
+    }).catch((err)=>{
+        console.log(err);
+    });
+};
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

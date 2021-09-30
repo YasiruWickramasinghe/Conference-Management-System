@@ -1,0 +1,306 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _mdbreact = require("mdbreact");
+class RevHomeSummary extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            Underpapers: [],
+            ReviewedPapers: [],
+            Underworkshops: [],
+            Reviewedworkshops: []
+        };
+    }
+    componentDidMount() {
+        this.retreveReviewedPapers();
+        this.retreveUnderReviewedPapers();
+        this.retreveReviewedWorkshops();
+        this.retreveUndrReviewedWorkshops();
+    }
+    retreveReviewedPapers() {
+        _axiosDefault.default.get("http://localhost:8000/rev/researchpaper/reviewed").then((res)=>{
+            if (res.data.success) this.setState({
+                ReviewedPapers: res.data.ReviewedPapers
+            });
+        });
+    }
+    retreveUnderReviewedPapers() {
+        _axiosDefault.default.get("http://localhost:8000/rev/researchpaper/underreview").then((res)=>{
+            if (res.data.success) this.setState({
+                Underpapers: res.data.Underpapers
+            });
+        });
+    }
+    retreveUndrReviewedWorkshops() {
+        _axiosDefault.default.get("http://localhost:8000/rev/workshopproposal/underreview").then((res)=>{
+            if (res.data.success) this.setState({
+                Underworkshops: res.data.Underworkshops
+            });
+        });
+    }
+    retreveReviewedWorkshops() {
+        _axiosDefault.default.get("http://localhost:8000/rev/workshopproposal/reviewed").then((res)=>{
+            if (res.data.success) this.setState({
+                Reviewedworkshops: res.data.Reviewedworkshops
+            });
+        });
+    }
+    render() {
+        const countUnderReviewedPaper = this.state.Underpapers.length;
+        const countReviewedPaper = this.state.ReviewedPapers.length;
+        const countUnderReviewedWorkshop = this.state.Underworkshops.length;
+        const countReviewedWorkshop = this.state.Reviewedworkshops.length;
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 78
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row row-cols-1 row-cols-md-4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 79
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 80
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            narrow: true,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 81
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            className: "unique-color-dark",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 82
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold dark-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 83
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "white-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 84
+            },
+            __self: this
+        }, "New Research Paper")), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 86
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            className: "red-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 87
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "address-book",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 88
+            },
+            __self: this
+        }), " ", countUnderReviewedPaper)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 93
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            narrow: true,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 94
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            className: "unique-color-dark",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 95
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold dark-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 96
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "white-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 97
+            },
+            __self: this
+        }, "New Workshop Proposal")), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 99
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            className: "red-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 100
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "address-book",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 101
+            },
+            __self: this
+        }), " ", countUnderReviewedWorkshop)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 106
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            narrow: true,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 107
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            className: "unique-color-dark",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 108
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold dark-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 109
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "white-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 110
+            },
+            __self: this
+        }, "Old Research Paper")), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 112
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            className: "red-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 113
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "address-book",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 114
+            },
+            __self: this
+        }), " ", countReviewedPaper)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 119
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            narrow: true,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 120
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            className: "unique-color-dark",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 121
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold dark-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 122
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "white-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 123
+            },
+            __self: this
+        }, "Old Workshop proposal")), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 125
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            className: "red-text text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 126
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "address-book",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeSummary.jsx",
+                lineNumber: 127
+            },
+            __self: this
+        }), " ", countReviewedWorkshop)))))));
+    }
+}
+exports.default = RevHomeSummary;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

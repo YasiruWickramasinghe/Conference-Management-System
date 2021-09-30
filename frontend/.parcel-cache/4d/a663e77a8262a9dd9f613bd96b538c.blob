@@ -1,0 +1,515 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+var _mdbreact = require("mdbreact");
+class RpaymentForm extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            mTitle: "",
+            category: "",
+            username: "",
+            first_name: "",
+            last_name: "",
+            con_number: "",
+            payment: "Paid",
+            cnum: "",
+            cvc: "",
+            mm: "",
+            yy: ""
+        };
+    }
+    handleInputChange = (event)=>{
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    };
+    onSubmit = (e)=>{
+        e.preventDefault();
+        const id = this.props.match.params.id;
+        const { payment  } = this.state;
+        const data = {
+            payment: payment
+        };
+        if (this.state.cnum === "42424242424242" && this.state.mm == "01" && this.state.yy == "21" && this.state.cvc == "123") {
+            console.log(this.state.payment);
+            _axiosDefault.default.put(`http://localhost:5050/rpaper/paymentforresearch/${id}`, data).then((res)=>{
+                if (res.data.success) {
+                    alert("Paid successfully");
+                    this.setState({
+                        mTitle: "",
+                        category: "",
+                        author: "",
+                        cnum: "",
+                        cvc: "",
+                        mm: "",
+                        yy: ""
+                    });
+                    this.props.history.push(`/user/allApprovedPapers`);
+                }
+            });
+        } else {
+            alert("Please Enter Valid Card Details");
+            this.setState({
+                mTitle: "",
+                category: "",
+                author: "",
+                cnum: "",
+                cvc: "",
+                mm: "",
+                yy: ""
+            });
+        }
+    };
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        this.setState({
+            first_name: decode.first_name
+        });
+        this.setState({
+            last_name: decode.last_name
+        });
+        this.setState({
+            con_number: decode.con_number
+        });
+        _axiosDefault.default.get(`http://localhost:5050/rpaper/getspecificpaper/${id}`).then((res)=>{
+            if (res.data.success) this.setState({
+                mTitle: res.data.post.mTitle,
+                category: res.data.post.category
+            });
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            style: {
+                backgroundImage: `url("https://wallpaperaccess.com/full/1393241.jpg")`,
+                bacgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 101
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container pb-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 107
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 108
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-sm-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 109
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-sm-6",
+            style: {
+                marginTop: "6rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 110
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 111
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "header pt-3 default-color",
+            style: {
+                textAlign: "center"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 112
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+            style: {
+                fontWeight: "bold",
+                color: "white"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 116
+            },
+            __self: this
+        }, "Secure Payment")), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 120
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            onSubmit: this.onSubmit,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 121
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row p-2",
+            style: {
+                alignContent: "center"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 122
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold"
+            },
+            className: "ml-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 123
+            },
+            __self: this
+        }, "Title :"), /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif"
+            },
+            className: "ml-2",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 129
+            },
+            __self: this
+        }, this.state.mTitle, " ")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row p-2",
+            style: {
+                alignContent: "center"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 134
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold"
+            },
+            className: "ml-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 135
+            },
+            __self: this
+        }, "Category :"), /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif"
+            },
+            className: "ml-2",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 141
+            },
+            __self: this
+        }, this.state.category)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row p-2",
+            style: {
+                alignContent: "center"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 146
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold"
+            },
+            className: "ml-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 147
+            },
+            __self: this
+        }, "Current User :"), /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif"
+            },
+            className: "ml-2",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 153
+            },
+            __self: this
+        }, this.state.first_name, " ", this.state.last_name, " ")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row p-2",
+            style: {
+                alignContent: "center"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 158
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold"
+            },
+            className: "ml-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 159
+            },
+            __self: this
+        }, "Contact Number :"), /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            style: {
+                fontFamily: "sans-serif"
+            },
+            className: "ml-2",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 165
+            },
+            __self: this
+        }, this.state.con_number)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 170
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-group",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 172
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            for: "cardNumber",
+            style: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 173
+            },
+            __self: this
+        }, "CARD NUMBER"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 179
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "text",
+            class: "form-control",
+            name: "cnum",
+            value: this.state.cnum,
+            onChange: this.handleInputChange,
+            id: "cardNumber",
+            placeholder: "Valid Card Number",
+            required: true,
+            autofocus: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 180
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "input-group-addon",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 191
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "glyphicon glyphicon-lock",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 192
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 197
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "col-xs-7 col-md-7",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 198
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-group",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 199
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            for: "expityMonth",
+            style: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 200
+            },
+            __self: this
+        }, "EXPIRY DATE"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 209
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "col-xs-6 col-lg-6 pl-ziro",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 210
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "text",
+            class: "form-control",
+            name: "mm",
+            value: this.state.mm,
+            onChange: this.handleInputChange,
+            id: "expityMonth",
+            placeholder: "MM",
+            required: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 211
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "col-xs-6 col-lg-6 pl-ziro",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 222
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "text",
+            class: "form-control",
+            id: "expityYear",
+            name: "yy",
+            value: this.state.yy,
+            onChange: this.handleInputChange,
+            placeholder: "YY",
+            required: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 223
+            },
+            __self: this
+        }))))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "col-xs-5 col-md-5 pull-right",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 237
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-group",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 238
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            for: "cvCode",
+            style: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 239
+            },
+            __self: this
+        }, "CV CODE"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "password",
+            class: "form-control",
+            id: "cvCode",
+            name: "cvc",
+            value: this.state.cvc,
+            onChange: this.handleInputChange,
+            placeholder: "CV",
+            required: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 248
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "text-center mt-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 262
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-primary",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 263
+            },
+            __self: this
+        }, "Pay Here")))))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-sm-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\ResearcherPAymentForm.js",
+                lineNumber: 269
+            },
+            __self: this
+        })))));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(RpaymentForm);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

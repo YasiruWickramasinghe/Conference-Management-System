@@ -1,0 +1,165 @@
+var helpers = require("../../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+var _reactRouterDom = require("react-router-dom");
+class RpaperAllNotifications extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            AllNotify: []
+        };
+    }
+    componentDidMount() {
+        this.retrievePapers();
+    }
+    retrievePapers = ()=>{
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        _axiosDefault.default.get(`http://localhost:5050/researchpaper/notification/${decode.email}`).then((res)=>{
+            if (res.data.success) {
+                console.log(res.data);
+                this.setState({
+                    AllNotify: res.data.existingPapers
+                });
+            }
+        });
+    };
+    onDelete = (id)=>{
+        _axiosDefault.default.delete(`http://localhost:5050/researchpaper/deletenotification/${id}`).then((res)=>{
+            alert("Delete Successfully");
+            this.retrievePapers();
+            location.reload();
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 47
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "card",
+            style: {
+                marginTop: "7rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 48
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "card",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 49
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "card-body pl-5",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 50
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 51
+            },
+            __self: this
+        }, "Notifications"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 52
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("table", {
+            className: "table",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 53
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tbody", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                lineNumber: 54
+            },
+            __self: this
+        }, this.state.AllNotify.map((papers, index)=>/*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                class: "table-success",
+                key: index,
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                    lineNumber: 56
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+                scope: "row",
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                    lineNumber: 57
+                },
+                __self: this
+            }, index + 1), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                    lineNumber: 59
+                },
+                __self: this
+            }, papers.mTitle), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                    lineNumber: 60
+                },
+                __self: this
+            }, papers.status), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                    lineNumber: 61
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+                className: "btn btn-danger btn-sm ml-3",
+                href: "#",
+                onClick: ()=>this.onDelete(papers._id)
+                ,
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                    lineNumber: 62
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+                className: "fas fa-trash-alt",
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RNotifications\\RpaperAllNotifications.js",
+                    lineNumber: 67
+                },
+                __self: this
+            }), "\xa0Delete")))
+        )))))))));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(RpaperAllNotifications);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

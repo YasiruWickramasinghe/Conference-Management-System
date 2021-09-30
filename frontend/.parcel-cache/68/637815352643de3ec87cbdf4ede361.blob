@@ -1,0 +1,722 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _coverImage = require("../Decorate Component/CoverImage");
+var _coverImageDefault = parcelHelpers.interopDefault(_coverImage);
+var _attention = require("../Decorate Component/Attention");
+var _attentionDefault = parcelHelpers.interopDefault(_attention);
+var _socialMedia = require("../Decorate Component/SocialMedia");
+var _socialMediaDefault = parcelHelpers.interopDefault(_socialMedia);
+var _reactRouterDom = require("react-router-dom");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _mdbreact = require("mdbreact");
+class ResearcherMainPage extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            paper: {
+            }
+        };
+    }
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        _axiosDefault.default.get(`http://localhost:5050/rpaper/viewpaper/${id}`).then((res)=>{
+            if (res.data.success) this.setState({
+                paper: res.data.paper
+            });
+        });
+    }
+    render() {
+        const { status , payment , mTitle , category , abstract , keyword , author , photo , userId , first_name , last_name , con_number  } = this.state.paper;
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 47
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            style: {
+                marginTop: "3rem"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 48
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 49
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_coverImageDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 51
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 54
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 55
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 56
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 57
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "8",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 58
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            wide: true,
+            cascade: true,
+            className: "card-image",
+            style: {
+                backgroundImage: "url(https://image.freepik.com/free-vector/white-abstract-background_23-2148882948.jpg)",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 59
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            cascade: true,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 70
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 71
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "8",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 72
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 73
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 74
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 75
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 76
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "text-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 77
+            },
+            __self: this
+        }, "Research Details")))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 83
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 84
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 85
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 86
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 87
+            },
+            __self: this
+        }), " ", "Title"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 92
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 93
+            },
+            __self: this
+        }, mTitle)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 95
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 96
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 97
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 98
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 99
+            },
+            __self: this
+        }), " ", "Author"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 104
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 105
+            },
+            __self: this
+        }, author)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 107
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 108
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 109
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 110
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 111
+            },
+            __self: this
+        }), " ", "Abstract"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 116
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 117
+            },
+            __self: this
+        }, abstract)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 119
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 121
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 122
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 123
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 124
+            },
+            __self: this
+        }), " ", "Category"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 129
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 130
+            },
+            __self: this
+        }, category)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 132
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 133
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 134
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 135
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 136
+            },
+            __self: this
+        }), " ", "Keywords"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 141
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 142
+            },
+            __self: this
+        }, keyword)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 144
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 146
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 147
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 148
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 149
+            },
+            __self: this
+        }), " ", "Payment"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 154
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 155
+            },
+            __self: this
+        }, payment)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 157
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 158
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 159
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 160
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 161
+            },
+            __self: this
+        }), " ", "Reviewer Status"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 166
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 167
+            },
+            __self: this
+        }, status)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 169
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 173
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 174
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 175
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 176
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 177
+            },
+            __self: this
+        }, "Contact Details"))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 182
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 183
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 184
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 185
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "user",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 186
+            },
+            __self: this
+        }), " ", first_name, " ", last_name))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 191
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 192
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 193
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "envelope",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 194
+            },
+            __self: this
+        }), " ", userId))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 198
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 199
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 200
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "phone",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 201
+            },
+            __self: this
+        }), con_number))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 207
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 207
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardHeader, {
+            className: "form-header red rounded",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 208
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: photo,
+            className: "my-3 white-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 209
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("center", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 209
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "file-alt white-text",
+            size: "2x",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 210
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 210
+            },
+            __self: this
+        }), " View PDF"))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 217
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 218
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 219
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 220
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 221
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 226
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 227
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_attentionDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 228
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 230
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 231
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_socialMediaDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 233
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\ViewResearchpaper.js",
+                lineNumber: 238
+            },
+            __self: this
+        }))))));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(ResearcherMainPage);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

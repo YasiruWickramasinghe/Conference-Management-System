@@ -1,0 +1,50 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "register", ()=>register
+);
+parcelHelpers.export(exports, "login", ()=>login
+);
+parcelHelpers.export(exports, "login", ()=>login
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+const register = (newResearcher)=>{
+    return _axiosDefault.default.post('http://localhost:8000/registerReviewer', {
+        first_name: newResearcher.first_name,
+        last_name: newResearcher.last_name,
+        email: newResearcher.email,
+        password: newResearcher.password
+    }).then((res)=>{
+        window.alert("Registered Successfully");
+        return res.data;
+    });
+};
+const login = (researcher)=>{
+    return _axiosDefault.default.post('http://localhost:8000/loginReviewer', {
+        email: researcher.email,
+        password: researcher.password
+    }).then((res)=>{
+        localStorage.setItem('reviewertoken', res.data);
+        console.log(res.data);
+        return res.data;
+    }).catch((err)=>{
+        console.log(err);
+    });
+};
+const login = (user)=>{
+    console.log(user);
+    return _axiosDefault.default.post("http://localhost:5050/users/loginUser", {
+        email: user.email,
+        password: user.password
+    }).then((res)=>{
+        localStorage.setItem("usertoken", res.data);
+        const token = localStorage.usertoken;
+        const decode = jwt_decode(token);
+        console.log(decode.position);
+        if (decode.position == "Researcher") localStorage.setItem("Reasearcher", true);
+        else if (decode.position == "Workshop Presenter") localStorage.setItem("Workshop_Presenter", true);
+        return decode.position;
+    }).catch((err)=>{
+        console.log(err);
+    });
+};

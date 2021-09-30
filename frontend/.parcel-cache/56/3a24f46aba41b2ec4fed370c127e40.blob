@@ -1,0 +1,472 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _rnotifications = require("../USER/component/Researcher/RNotifications/Rnotifications");
+var _rnotificationsDefault = parcelHelpers.interopDefault(_rnotifications);
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+var _s = $RefreshSig$();
+//import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+const Adminnavbar = ()=>{
+    _s();
+    const history = _reactRouterDom.useHistory();
+    function logout() {
+        localStorage.removeItem("Reasearcher");
+        localStorage.removeItem("Workshop_Presenter");
+        localStorage.removeItem("reviewertoken");
+        history.push("/");
+        location.reload();
+    }
+    return(/*#__PURE__*/ _reactDefault.default.createElement("nav", {
+        className: "navbar navbar-expand-sm navbar-dark bg-dark mb-3 fixed-top",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 20
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "container",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "navbar-brand",
+        to: "/",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 22
+        },
+        __self: undefined
+    }, "Navbar"), /*#__PURE__*/ _reactDefault.default.createElement("ul", {
+        className: "navbar-nav",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 25
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 26
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 27
+        },
+        __self: undefined
+    }, "Home")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 31
+        },
+        __self: undefined
+    }, localStorage.getItem("AdminIsLoggedIn") && /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/Approve",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 33
+        },
+        __self: undefined
+    }, "Approve")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 38
+        },
+        __self: undefined
+    }, localStorage.getItem("AdminIsLoggedIn") && /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/Admin/Proflie/",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 40
+        },
+        __self: undefined
+    }, "Profile")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 46
+        },
+        __self: undefined
+    }, !localStorage.getItem("Workshop_Presenter") && !localStorage.getItem("Reasearcher") && !localStorage.getItem("AdminIsLoggedIn") && !localStorage.getItem("EditorLoggedIn") && /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/Login",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 51
+        },
+        __self: undefined
+    }, "Login")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 56
+        },
+        __self: undefined
+    }, (localStorage.getItem("EditorLoggedIn") || localStorage.getItem("AdminIsLoggedIn")) && /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        class: "nav-link active",
+        "aria-current": "page",
+        to: "/create-speaker",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 59
+        },
+        __self: undefined
+    }, "Create speaker")), (localStorage.getItem("EditorLoggedIn") || localStorage.getItem("AdminIsLoggedIn")) && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 70
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        class: "nav-link",
+        href: "/list-speaker",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 71
+        },
+        __self: undefined
+    }, "List speaker")), (localStorage.getItem("EditorLoggedIn") || localStorage.getItem("AdminIsLoggedIn")) && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 78
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        class: "nav-link",
+        href: "/create-conference",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 79
+        },
+        __self: undefined
+    }, "Create Conference")), (localStorage.getItem("EditorLoggedIn") || localStorage.getItem("AdminIsLoggedIn")) && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 87
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        class: "nav-link",
+        href: "/list-conference",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 88
+        },
+        __self: undefined
+    }, "List conference")), localStorage.getItem("Reasearcher") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 95
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/user/userDashboard",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 96
+        },
+        __self: undefined
+    }, "Dashboard")), localStorage.getItem("Reasearcher") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 102
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/user/userPapersRetrieve",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 103
+        },
+        __self: undefined
+    }, "Pending & Denied Papers")), localStorage.getItem("Reasearcher") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 110
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/user/allApprovedPapers",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 111
+        },
+        __self: undefined
+    }, "Approved Papers")), localStorage.getItem("Reasearcher") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 118
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/user/RpaperInsert",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 119
+        },
+        __self: undefined
+    }, "New Paper")), localStorage.getItem("Reasearcher") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 126
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "/user/userLogin",
+        onClick: logout,
+        className: "nav-link",
+        to: "/Login",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 127
+        },
+        __self: undefined
+    }, "Logout")), localStorage.getItem("Reasearcher") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 138
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/user/rnotifications",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 139
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_rnotificationsDefault.default, {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 140
+        },
+        __self: undefined
+    }))), localStorage.getItem("Workshop_Presenter") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 146
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/workshop/workshopdashboard",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 147
+        },
+        __self: undefined
+    }, "Dashboard")), localStorage.getItem("Workshop_Presenter") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 153
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/workshop/underreviewproposals",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 154
+        },
+        __self: undefined
+    }, "Pending Proposals")), localStorage.getItem("Workshop_Presenter") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 161
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/workshop/declinedproposals",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 162
+        },
+        __self: undefined
+    }, "Declined Proposals")), localStorage.getItem("Workshop_Presenter") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 169
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/workshop/approvedproposals",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 170
+        },
+        __self: undefined
+    }, "Approved Proposals")), localStorage.getItem("Workshop_Presenter") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 177
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "nav-link",
+        to: "/workshop/workshopInsert",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 178
+        },
+        __self: undefined
+    }, "New Proposal")), localStorage.getItem("Workshop_Presenter") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 185
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "/user/userLogin",
+        onClick: logout,
+        className: "nav-link",
+        to: "/Login",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 186
+        },
+        __self: undefined
+    }, "Logout")), localStorage.getItem("reviewertoken") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 197
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        class: "nav-link",
+        to: "/rev/researchpaper/last/:id",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 198
+        },
+        __self: undefined
+    }, "Reviewer Home")), localStorage.getItem("reviewertoken") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 205
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        class: "nav-link",
+        to: "/rev/research/underreview",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 206
+        },
+        __self: undefined
+    }, "New Research Papers")), localStorage.getItem("reviewertoken") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 212
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        class: "nav-link",
+        to: "/rev/research/reviewed",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 213
+        },
+        __self: undefined
+    }, "Old Research Papers")), localStorage.getItem("reviewertoken") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 219
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        class: "nav-link",
+        to: "/rev/workshop/underreview",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 220
+        },
+        __self: undefined
+    }, "New Workshop Proposals")), localStorage.getItem("reviewertoken") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 226
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        class: "nav-link",
+        to: "/rev/workshop/reviewed",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 227
+        },
+        __self: undefined
+    }, "Old Workshop Proposals")), localStorage.getItem("reviewertoken") && /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "nav-item",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 238
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        class: "nav-link",
+        onClick: logout,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\navbar\\Adminnavbar.js",
+            lineNumber: 239
+        },
+        __self: undefined
+    }, "Logout"))))));
+};
+_s(Adminnavbar, "9cZfZ04734qoCGIctmKX7+sX6eU=", false, function() {
+    return [_reactRouterDom.useHistory];
+});
+_c = Adminnavbar;
+exports.default = Adminnavbar;
+var _c;
+$RefreshReg$(_c, "Adminnavbar");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

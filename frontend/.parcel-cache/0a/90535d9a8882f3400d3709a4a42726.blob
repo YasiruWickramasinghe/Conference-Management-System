@@ -1,0 +1,691 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+//import "../bootstrap.min.css";
+var _reactRouterDom = require("react-router-dom");
+var _adminnavbar = require("./component/navbar/Adminnavbar");
+var _adminnavbarDefault = parcelHelpers.interopDefault(_adminnavbar);
+var _login = require("./component/login");
+var _loginDefault = parcelHelpers.interopDefault(_login);
+var _register = require("./component/register");
+var _registerDefault = parcelHelpers.interopDefault(_register);
+var _home = require("./component/home/home");
+var _homeDefault = parcelHelpers.interopDefault(_home);
+var _approve = require("./component/approve/approve");
+var _approveDefault = parcelHelpers.interopDefault(_approve);
+var _loginButton = require("./LoginButton");
+var _loginButtonDefault = parcelHelpers.interopDefault(_loginButton);
+var _singleConference = require("./component/home/singleConference");
+var _singleConferenceDefault = parcelHelpers.interopDefault(_singleConference);
+var _caption = require("./component/caption/caption");
+var _captionDefault = parcelHelpers.interopDefault(_caption);
+var _profile = require("./component/proflie/profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
+var _editProfile = require("./component/proflie/EditProfile");
+var _editProfileDefault = parcelHelpers.interopDefault(_editProfile);
+var _navbar = require("./editor/navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _createspeaker = require("./editor/create/createspeaker");
+var _createspeakerDefault = parcelHelpers.interopDefault(_createspeaker);
+var _listspeaker = require("./editor/list/listspeaker");
+var _listspeakerDefault = parcelHelpers.interopDefault(_listspeaker);
+var _createconference = require("./editor/create/createconference");
+var _createconferenceDefault = parcelHelpers.interopDefault(_createconference);
+var _updatespeaker = require("./editor/update/updatespeaker");
+var _updatespeakerDefault = parcelHelpers.interopDefault(_updatespeaker);
+var _listconference = require("./editor/list/listconference");
+var _listconferenceDefault = parcelHelpers.interopDefault(_listconference);
+var _updateconference = require("./editor/update/updateconference");
+var _updateconferenceDefault = parcelHelpers.interopDefault(_updateconference);
+var _editorlogin = require("./editor/login/editorlogin");
+var _editorloginDefault = parcelHelpers.interopDefault(_editorlogin);
+var _editorregister = require("./editor/login/editorregister");
+var _editorregisterDefault = parcelHelpers.interopDefault(_editorregister);
+var _revFooter = require("./component/reviewer/RevFooter");
+var _revFooterDefault = parcelHelpers.interopDefault(_revFooter);
+var _userLogin = require("./component/USER/component/UserAuthenticate/UserLogin");
+var _userLoginDefault = parcelHelpers.interopDefault(_userLogin);
+var _userDashboard = require("./component/USER/component/Researcher/UserDashboard");
+var _userDashboardDefault = parcelHelpers.interopDefault(_userDashboard);
+var _userSignup = require("./component/USER/component/UserAuthenticate/UserSignup");
+var _userSignupDefault = parcelHelpers.interopDefault(_userSignup);
+var _usersNavBar = require("./component/USER/component/Researcher/UsersNavBar");
+var _usersNavBarDefault = parcelHelpers.interopDefault(_usersNavBar);
+var _rpaperInsert = require("./component/USER/component/Researcher/RpaperInsert");
+var _rpaperInsertDefault = parcelHelpers.interopDefault(_rpaperInsert);
+var _userPaperRetrives = require("./component/USER/component/Researcher/UserPaperRetrives");
+var _userPaperRetrivesDefault = parcelHelpers.interopDefault(_userPaperRetrives);
+var _researcherPAymentForm = require("./component/USER/component/Researcher/ResearcherPAymentForm");
+var _researcherPAymentFormDefault = parcelHelpers.interopDefault(_researcherPAymentForm);
+var _allApprovePapers = require("./component/USER/component/Researcher/AllApprovePapers");
+var _allApprovePapersDefault = parcelHelpers.interopDefault(_allApprovePapers);
+var _viewResearchpaper = require("./component/USER/component/Researcher/ViewResearchpaper");
+var _viewResearchpaperDefault = parcelHelpers.interopDefault(_viewResearchpaper);
+var _rpaperAllNotifications = require("./component/USER/component/Researcher/RNotifications/RpaperAllNotifications");
+var _rpaperAllNotificationsDefault = parcelHelpers.interopDefault(_rpaperAllNotifications);
+var _presenterDashboard = require("./component/USER/component/WorkshopPresenter/PresenterDashboard");
+var _presenterDashboardDefault = parcelHelpers.interopDefault(_presenterDashboard);
+var _proposalSubmit = require("./component/USER/component/WorkshopPresenter/ProposalSubmit");
+var _proposalSubmitDefault = parcelHelpers.interopDefault(_proposalSubmit);
+var _proposalUNretrieve = require("./component/USER/component/WorkshopPresenter/ProposalUNretrieve");
+var _proposalUNretrieveDefault = parcelHelpers.interopDefault(_proposalUNretrieve);
+var _proposalDCretrieve = require("./component/USER/component/WorkshopPresenter/ProposalDCretrieve");
+var _proposalDCretrieveDefault = parcelHelpers.interopDefault(_proposalDCretrieve);
+var _proposalAPretrieve = require("./component/USER/component/WorkshopPresenter/ProposalAPretrieve");
+var _proposalAPretrieveDefault = parcelHelpers.interopDefault(_proposalAPretrieve);
+var _proposalView = require("./component/USER/component/WorkshopPresenter/ProposalView");
+var _proposalViewDefault = parcelHelpers.interopDefault(_proposalView);
+var _revHome = require("./component/reviewer/home/RevHome");
+var _revHomeDefault = parcelHelpers.interopDefault(_revHome);
+var _revProfile = require("./component/reviewer/RevProfile");
+var _revProfileDefault = parcelHelpers.interopDefault(_revProfile);
+var _revStartUp = require("./component/reviewer/RevStartUp");
+var _revStartUpDefault = parcelHelpers.interopDefault(_revStartUp);
+//Reserach Start
+var _revNewResearch = require("./component/reviewer/research/RevNewResearch");
+var _revNewResearchDefault = parcelHelpers.interopDefault(_revNewResearch);
+var _revOldResearch = require("./component/reviewer/research/RevOldResearch");
+var _revOldResearchDefault = parcelHelpers.interopDefault(_revOldResearch);
+var _revResearchPaper = require("./component/reviewer/research/RevResearchPaper");
+var _revResearchPaperDefault = parcelHelpers.interopDefault(_revResearchPaper);
+var _revApproveResearch = require("./component/reviewer/research/RevApproveResearch");
+var _revApproveResearchDefault = parcelHelpers.interopDefault(_revApproveResearch);
+//Reserach End
+//Workshop Start
+var _revNewWorkshops = require("./component/reviewer/workshop/RevNewWorkshops");
+var _revNewWorkshopsDefault = parcelHelpers.interopDefault(_revNewWorkshops);
+var _revOldWorkshops = require("./component/reviewer/workshop/RevOldWorkshops");
+var _revOldWorkshopsDefault = parcelHelpers.interopDefault(_revOldWorkshops);
+var _revWorkshopProposal = require("./component/reviewer/workshop/RevWorkshopProposal");
+var _revWorkshopProposalDefault = parcelHelpers.interopDefault(_revWorkshopProposal);
+var _revApproveWorkshop = require("./component/reviewer/workshop/RevApproveWorkshop");
+var _revApproveWorkshopDefault = parcelHelpers.interopDefault(_revApproveWorkshop);
+//Workshop End
+//login
+var _revLogin = require("./component/reviewer/login/RevLogin");
+var _revLoginDefault = parcelHelpers.interopDefault(_revLogin);
+var _revRegister = require("./component/reviewer/login/RevRegister");
+var _revRegisterDefault = parcelHelpers.interopDefault(_revRegister);
+//import RevProfile from "./component/reviewer/login/RevProfile";
+//import Navbars from "./component/reviewer/login/Navbars";
+var _revLanding = require("./component/reviewer/login/RevLanding");
+var _revLandingDefault = parcelHelpers.interopDefault(_revLanding);
+const App = ()=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 77
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_adminnavbarDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 78
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 79
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 80
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("section", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 82
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Switch, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 83
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/create-speaker",
+        component: _createspeakerDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 84
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/list-speaker",
+        component: _listspeakerDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 85
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/create-conference",
+        component: _createconferenceDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 86
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/updatespeaker/:id",
+        component: _updatespeakerDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 87
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/list-conference",
+        component: _listconferenceDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 88
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/editorlogin",
+        component: _editorloginDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 89
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/editorregister",
+        component: _editorregisterDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 90
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/updateconference/:id",
+        component: _updateconferenceDefault.default,
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 91
+        },
+        __self: undefined
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/reasearchermainpage",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 100
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_viewResearchpaperDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 101
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/RpaperInsert",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 104
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_rpaperInsertDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 105
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        exact: true,
+        path: "/user/userLogin",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 108
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_userLoginDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 109
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        exact: true,
+        path: "/user/userSignup",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 112
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_userSignupDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 113
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/userDashboard",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 116
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_userDashboardDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 117
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/userPapersRetrieve",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 120
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_userPaperRetrivesDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 121
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/allApprovedPapers",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 124
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_allApprovePapersDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 125
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/researcherPaymentForm/:id",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 128
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_researcherPAymentFormDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 129
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/viewRpaper/:id",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 132
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_viewResearchpaperDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 133
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/user/rnotifications",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 136
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_rpaperAllNotificationsDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 137
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/workshop/workshopdashboard",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 140
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_presenterDashboardDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 141
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/workshop/workshopInsert",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 144
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_proposalSubmitDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 145
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/workshop/underreviewproposals",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 148
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_proposalUNretrieveDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 149
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/workshop/declinedproposals",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 152
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_proposalDCretrieveDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 153
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/workshop/approvedproposals",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 156
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_proposalAPretrieveDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 157
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/workshop/viewproposal/:id",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 160
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_proposalViewDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 161
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/Login",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 165
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_loginButtonDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 166
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/conference/:id",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 168
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_singleConferenceDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 169
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/Admin/Login",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 172
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_loginDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 173
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/Approve",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 175
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_approveDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 176
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 178
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_captionDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 179
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_homeDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 180
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_revFooterDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 181
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/Admin/Register",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 183
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_registerDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 184
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/Admin/Proflie/",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 186
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_profileDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 187
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/Admin/Proflie/Edit",
+        exact: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 189
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_editProfileDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 190
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/login",
+        exact: true,
+        component: _revLoginDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 195
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/register",
+        exact: true,
+        component: _revRegisterDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 196
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/RevStartUp",
+        exact: true,
+        component: _revStartUpDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 197
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/researchpaper/last/:id",
+        exact: true,
+        component: _revHomeDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 199
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/researchProfile",
+        exact: true,
+        component: _revProfileDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 204
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/research/underreview",
+        exact: true,
+        component: _revNewResearchDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 208
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/research/reviewed",
+        exact: true,
+        component: _revOldResearchDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 213
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/researchpaper/:id",
+        exact: true,
+        component: _revResearchPaperDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 218
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/researchpaper/update/:id",
+        exact: true,
+        component: _revApproveResearchDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 223
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/workshop/underreview",
+        exact: true,
+        component: _revNewWorkshopsDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 233
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/workshop/reviewed",
+        exact: true,
+        component: _revOldWorkshopsDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 238
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/workshopproposal/:id",
+        exact: true,
+        component: _revWorkshopProposalDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 243
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/rev/workshopproposal/update/:id",
+        exact: true,
+        component: _revApproveWorkshopDefault.default,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\App.js",
+            lineNumber: 248
+        },
+        __self: undefined
+    })));
+};
+_c = App;
+exports.default = App;
+var _c;
+$RefreshReg$(_c, "App");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

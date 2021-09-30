@@ -1,0 +1,257 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _revFunction = require("./RevFunction");
+var _mdbreact = require("mdbreact");
+class RevRegister extends _react.Component {
+    constructor(){
+        super();
+        this.state = {
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: ""
+        };
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+    onSubmit(e) {
+        e.preventDefault();
+        const reviewer = {
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.email,
+            password: this.state.password
+        };
+        _revFunction.register(reviewer).then((res)=>{
+            if (res) this.props.history.push(`/rev/login`);
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 45
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "w-100",
+            style: {
+                backgroundImage: `url("https://image.freepik.com/free-photo/rear-view-audience-listening-speakers-stage-conference-hall-seminar-meeting_41418-3389.jpg")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 55
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 56
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("center", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 57
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 58
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 60
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            className: "card-image",
+            style: {
+                backgroundImage: 'url(https://image.freepik.com/vector-gratis/fondo-abstracto-agua_114588-474.jpg)',
+                width: '28rem',
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 61
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 71
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardHeader, {
+            className: "form-header winter-neva-gradient rounded",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 72
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "my-3",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 73
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "user",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 74
+            },
+            __self: this
+        }), " SignUp")), /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            onSubmit: this.onSubmit,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 77
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "grey-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 78
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Your First Name",
+            icon: "user",
+            group: true,
+            type: "text",
+            validate: true,
+            error: "wrong",
+            success: "right",
+            name: "first_name",
+            value: this.state.first_name,
+            onChange: this.onChange,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 79
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Your Last Name",
+            icon: "user-circle",
+            group: true,
+            type: "text",
+            validate: true,
+            error: "wrong",
+            success: "right",
+            name: "last_name",
+            value: this.state.last_name,
+            onChange: this.onChange,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 91
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Your Email",
+            icon: "envelope",
+            group: true,
+            type: "text",
+            validate: true,
+            error: "wrong",
+            success: "right",
+            name: "email",
+            value: this.state.email,
+            onChange: this.onChange,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 103
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Your password",
+            icon: "lock",
+            group: true,
+            type: "password",
+            validate: true,
+            name: "password",
+            value: this.state.password,
+            onChange: this.onChange,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 115
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "text-center py-4 mt-3",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 126
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-lg btn-dark btn-block",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 127
+            },
+            __self: this
+        }, "Register")), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 129
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "font-small black-text mt-3",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 130
+            },
+            __self: this
+        }, "Already have an account?", /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "/rev/login",
+            className: "dark-black-text ml-1 font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 132
+            },
+            __self: this
+        }, "Sign In")))))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\login\\RevRegister.jsx",
+                lineNumber: 146
+            },
+            __self: this
+        })))));
+    }
+}
+exports.default = RevRegister;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

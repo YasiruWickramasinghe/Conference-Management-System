@@ -1,0 +1,140 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class Navbar extends _react.Component {
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("nav", {
+            class: "navbar navbar-expand-sm navbar-dark bg-dark mb-3",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 8
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "container",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 9
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            class: "navbar-brand",
+            href: "#",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 10
+            },
+            __self: this
+        }, "Navbar"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            class: "navbar-toggler",
+            type: "button",
+            "data-bs-toggle": "collapse",
+            "data-bs-target": "#navbarNav",
+            "aria-controls": "navbarNav",
+            "aria-expanded": "false",
+            "aria-label": "Toggle navigation",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 11
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "navbar-toggler-icon",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 12
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "collapse navbar-collapse",
+            id: "navbarNav",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 14
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("ul", {
+            class: "navbar-nav",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 15
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            class: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 16
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            class: "nav-link active",
+            "aria-current": "page",
+            href: "/create-speaker",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 17
+            },
+            __self: this
+        }, "Create speaker")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            class: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 19
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            class: "nav-link",
+            href: "/list-speaker",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 20
+            },
+            __self: this
+        }, "List speaker")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            class: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 22
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            class: "nav-link",
+            href: "/create-conference",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 23
+            },
+            __self: this
+        }, "Create Conference")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            class: "nav-item",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 26
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            class: "nav-link",
+            href: "/list-conference",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\editor\\navbar.js",
+                lineNumber: 27
+            },
+            __self: this
+        }, "List conference")))))));
+    }
+}
+exports.default = Navbar;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

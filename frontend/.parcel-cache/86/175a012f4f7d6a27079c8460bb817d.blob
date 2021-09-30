@@ -1,0 +1,52 @@
+"use strict";
+function e(e1) {
+    this.message = e1;
+}
+e.prototype = new Error, e.prototype.name = "InvalidCharacterError";
+var r = "undefined" != typeof window && window.atob && window.atob.bind(window) || function(r1) {
+    var t = String(r1).replace(/=+$/, "");
+    if (t.length % 4 == 1) throw new e("'atob' failed: The string to be decoded is not correctly encoded.");
+    for(var n, o, a = 0, i = 0, c = ""; o = t.charAt(i++); ~o && (n = a % 4 ? 64 * n + o : o, (a++) % 4) && (c += String.fromCharCode(255 & n >> (-2 * a & 6))))o = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(o);
+    return c;
+};
+function t(e1) {
+    var t1 = e1.replace(/-/g, "+").replace(/_/g, "/");
+    switch(t1.length % 4){
+        case 0:
+            break;
+        case 2:
+            t1 += "==";
+            break;
+        case 3:
+            t1 += "=";
+            break;
+        default:
+            throw "Illegal base64url string!";
+    }
+    try {
+        return (function(e2) {
+            return decodeURIComponent(r(e2).replace(/(.)/g, function(e3, r1) {
+                var t2 = r1.charCodeAt(0).toString(16).toUpperCase();
+                return t2.length < 2 && (t2 = "0" + t2), "%" + t2;
+            }));
+        })(t1);
+    } catch (e2) {
+        return r(t1);
+    }
+}
+function n(e1) {
+    this.message = e1;
+}
+function o(e1, r1) {
+    if ("string" != typeof e1) throw new n("Invalid token specified");
+    var o1 = true === (r1 = r1 || {
+    }).header ? 0 : 1;
+    try {
+        return JSON.parse(t(e1.split(".")[o1]));
+    } catch (e2) {
+        throw new n("Invalid token specified: " + e2.message);
+    }
+}
+n.prototype = new Error, n.prototype.name = "InvalidTokenError";
+const a = o;
+a.default = o, a.InvalidTokenError = n, module.exports = a;

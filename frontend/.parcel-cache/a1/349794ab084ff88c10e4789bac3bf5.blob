@@ -1,0 +1,280 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactBootstrap = require("react-bootstrap");
+var _s = $RefreshSig$();
+const singleConference = ({ match  })=>{
+    _s();
+    const [conference, setconference] = _react.useState({
+    });
+    const id = _reactRouterDom.useParams().id;
+    _react.useEffect(()=>{
+        const sendRequest = async ()=>{
+            const { data  } = await _axiosDefault.default.get(`http://localhost:5000/api/conferences/${id}`);
+            setconference(data);
+            console.log(data);
+        };
+        sendRequest();
+    }, []);
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 22
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 23
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 24
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 25
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        class: "text-center",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 26
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("u", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 27
+        },
+        __self: undefined
+    }, conference.title)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 30
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("table", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 31
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("tbody", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 32
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 33
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 34
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "p-3 w-75",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 35
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("table", {
+        class: "table table-dark",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 36
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("thead", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 37
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 38
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("tbody", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 40
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 41
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+        scope: "row",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 42
+        },
+        __self: undefined
+    }, "1"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 43
+        },
+        __self: undefined
+    }, "TITLE"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 44
+        },
+        __self: undefined
+    }, conference.title)), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 46
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+        scope: "row",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 47
+        },
+        __self: undefined
+    }, "2"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 48
+        },
+        __self: undefined
+    }, "SPEAKER"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 49
+        },
+        __self: undefined
+    }, conference.speaker)), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 51
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+        scope: "row",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 52
+        },
+        __self: undefined
+    }, "3"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 53
+        },
+        __self: undefined
+    }, "DATE"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 54
+        },
+        __self: undefined
+    }, conference.date)), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 56
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+        scope: "row",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 57
+        },
+        __self: undefined
+    }, "4"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 58
+        },
+        __self: undefined
+    }, "DISCRIPTION"), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 59
+        },
+        __self: undefined
+    }, conference.description)))))), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 65
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+        class: "text-center",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 66
+        },
+        __self: undefined
+    }, "SPEAKER"), /*#__PURE__*/ _reactDefault.default.createElement("img", {
+        src: require("url:./avatar.png"),
+        width: "300",
+        height: "300",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 67
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 72
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        class: "btn btn-primary btn-lg",
+        type: "button",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 73
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+        class: "fas fa-user",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\home\\singleConference.js",
+            lineNumber: 74
+        },
+        __self: undefined
+    }), " About Mr/Miss ", conference.speaker))))))));
+};
+_s(singleConference, "jC2EYWVvUGewk+0A6zgTIEwCeSQ=");
+exports.default = singleConference;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

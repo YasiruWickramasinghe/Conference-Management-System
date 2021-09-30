@@ -1,0 +1,1 @@
+module.exports = require('./bundle-url').getBundleURL() + "1.HASH_REF_ce6f1cd2f69fa82c54ee5da1dde79693.jpg";

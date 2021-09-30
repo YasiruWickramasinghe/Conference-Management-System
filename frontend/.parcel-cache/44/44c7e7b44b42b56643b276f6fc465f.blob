@@ -1,0 +1,678 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _mdbreact = require("mdbreact");
+var _reactRouterDom = require("react-router-dom");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _coverImage = require("../Decorate Component/CoverImage");
+var _coverImageDefault = parcelHelpers.interopDefault(_coverImage);
+var _attention = require("../Decorate Component/Attention");
+var _attentionDefault = parcelHelpers.interopDefault(_attention);
+var _socialMedia = require("../Decorate Component/SocialMedia");
+var _socialMediaDefault = parcelHelpers.interopDefault(_socialMedia);
+class Viewproposal extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            proposal: {
+            }
+        };
+    }
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        _axiosDefault.default.get(`http://localhost:5050/proposal/viewproposal/${id}`).then((res)=>{
+            if (res.data.success) this.setState({
+                proposal: res.data.proposal
+            });
+        });
+    }
+    render() {
+        const { status , wTitle , category , tAudience , wGoal , pName , photo , userId , first_name , last_name , con_number  } = this.state.proposal;
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 33
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            style: {
+                marginTop: "3rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 34
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 35
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_coverImageDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 37
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 40
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 41
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 42
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 43
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "8",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 44
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            wide: true,
+            cascade: true,
+            className: "card-image",
+            style: {
+                backgroundImage: "url(https://image.freepik.com/free-vector/white-abstract-background_23-2148882948.jpg)",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 45
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            cascade: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 56
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 57
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "8",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 58
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 59
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 60
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 61
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 62
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "text-center",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 63
+            },
+            __self: this
+        }, "Research Details")))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 69
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 70
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 71
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 72
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 73
+            },
+            __self: this
+        }), " ", "Proposal Title"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 78
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 79
+            },
+            __self: this
+        }, wTitle)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 81
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 82
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 83
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 84
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 85
+            },
+            __self: this
+        }), " ", "Presesnter Name"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 90
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 91
+            },
+            __self: this
+        }, pName)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 93
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 94
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 95
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 96
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 97
+            },
+            __self: this
+        }), " ", "Targetted Audience"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 102
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 103
+            },
+            __self: this
+        }, tAudience)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 105
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 107
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 108
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 109
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 110
+            },
+            __self: this
+        }), " ", "Category"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 115
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 116
+            },
+            __self: this
+        }, category)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 118
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 119
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 120
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 121
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 122
+            },
+            __self: this
+        }), " ", "Workshop Goal"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 127
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 128
+            },
+            __self: this
+        }, wGoal)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 130
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 131
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 132
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 133
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 134
+            },
+            __self: this
+        }), " ", "Reviewer Status"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 139
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 140
+            },
+            __self: this
+        }, status)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 142
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 146
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 147
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 148
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 149
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 150
+            },
+            __self: this
+        }, "Contact Details"))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 155
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 156
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 157
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 158
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "user",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 159
+            },
+            __self: this
+        }), " ", first_name, " ", last_name))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 164
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 165
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 166
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "envelope",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 167
+            },
+            __self: this
+        }), " ", userId))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 171
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 172
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 173
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "phone",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 174
+            },
+            __self: this
+        }), con_number))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 180
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 180
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardHeader, {
+            className: "form-header red rounded",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 181
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: photo,
+            className: "my-3 white-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 182
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("center", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 182
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "file-alt white-text",
+            size: "2x",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 183
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 183
+            },
+            __self: this
+        }), " Download Presentation "))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 189
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 190
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 191
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 192
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 193
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 198
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 199
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_attentionDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 200
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 202
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 203
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_socialMediaDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 205
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\ProposalView.js",
+                lineNumber: 210
+            },
+            __self: this
+        }))))));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(Viewproposal);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

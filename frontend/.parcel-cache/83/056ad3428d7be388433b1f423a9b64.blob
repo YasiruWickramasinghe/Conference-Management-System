@@ -1,0 +1,68 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _mdbreact = require("mdbreact");
+class Attention extends _react.Component {
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            narrow: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Decorate Component\\Attention.js",
+                lineNumber: 12
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            className: "elegant-color white-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Decorate Component\\Attention.js",
+                lineNumber: 13
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold red-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Decorate Component\\Attention.js",
+                lineNumber: 14
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("center", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Decorate Component\\Attention.js",
+                lineNumber: 15
+            },
+            __self: this
+        }, "Attention !")), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Decorate Component\\Attention.js",
+                lineNumber: 17
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardText, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Decorate Component\\Attention.js",
+                lineNumber: 19
+            },
+            __self: this
+        }, "According to the US Copyright Office, copyright applies to original works of creative expression that are captured in a tangible form. The copyright goes to the original creator of the work, who can choose to sell their rights to other parties."), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Decorate Component\\Attention.js",
+                lineNumber: 26
+            },
+            __self: this
+        }))));
+    }
+}
+exports.default = Attention;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

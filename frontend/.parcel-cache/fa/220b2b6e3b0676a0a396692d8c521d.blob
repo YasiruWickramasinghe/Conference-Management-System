@@ -1,0 +1,71 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _revOldResearchTable = require("./RevOldResearchTable");
+var _revOldResearchTableDefault = parcelHelpers.interopDefault(_revOldResearchTable);
+var _revOldResearchDescription = require("./RevOldResearchDescription");
+var _revOldResearchDescriptionDefault = parcelHelpers.interopDefault(_revOldResearchDescription);
+var _revFooter = require("../RevFooter");
+var _revFooterDefault = parcelHelpers.interopDefault(_revFooter);
+class RevOldResearchs extends _react.Component {
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearch.jsx",
+                lineNumber: 12
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearch.jsx",
+                lineNumber: 13
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "grey lighten-1",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearch.jsx",
+                lineNumber: 14
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearch.jsx",
+                lineNumber: 15
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_revOldResearchDescriptionDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearch.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_revOldResearchTableDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearch.jsx",
+                lineNumber: 17
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_revFooterDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearch.jsx",
+                lineNumber: 18
+            },
+            __self: this
+        }))));
+    }
+}
+exports.default = RevOldResearchs;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

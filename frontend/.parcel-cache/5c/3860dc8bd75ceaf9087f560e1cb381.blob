@@ -1,0 +1,936 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _revFooter = require("../RevFooter");
+var _revFooterDefault = parcelHelpers.interopDefault(_revFooter);
+var _mdbreact = require("mdbreact");
+class RevApproveWorkshop extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            status: "",
+            workshop: {
+            }
+        };
+    }
+    //Approve Research Paper
+    onApprove = (e)=>{
+        e.preventDefault();
+        const id = this.props.match.params.id;
+        const wTitle = this.state.workshop.wTitle;
+        //const userId = this.state.workshop.userId;
+        const Approvedata = {
+            status: "Approved"
+        };
+        const notifydata = {
+            wTitle: wTitle,
+            //userId: "edgfdg",
+            workshopId: id,
+            status: "Approved",
+            date: "1999/06/01"
+        };
+        _axiosDefault.default.put(`http://localhost:8000/rev/workshopproposal/update/${id}`, Approvedata).then((res)=>{
+            res.data.success;
+        });
+        _axiosDefault.default.post("http://localhost:8000/rev/workshopnotify/save", notifydata).then((res)=>{
+            if (res.data.success) alert("workshop Approved successfully");
+        });
+    };
+    //Decline Research Paper
+    onDecline = (e)=>{
+        e.preventDefault();
+        const id = this.props.match.params.id;
+        const wTitle = this.state.workshop.wTitle;
+        //const userId = this.state.workshop.userId;
+        const data = {
+            status: "Declined"
+        };
+        const notifydata = {
+            wTitle: wTitle,
+            //userId: "edgfdg",
+            workshopId: id,
+            status: "Declined",
+            date: "1999/06/01"
+        };
+        _axiosDefault.default.put(`http://localhost:8000/rev/workshopproposal/update/${id}`, data).then((res)=>{
+            res.data.success;
+        });
+        _axiosDefault.default.post("http://localhost:8000/rev/workshopnotify/save", notifydata).then((res)=>{
+            if (res.data.success) alert("workshop Declined successfully");
+        });
+    };
+    componentDidMount() {
+        const id = this.props.match.params.id;
+        _axiosDefault.default.get(`http://localhost:8000/rev/workshopproposal/${id}`).then((res)=>{
+            if (res.data.success) {
+                this.setState({
+                    workshop: res.data.workshop
+                });
+                console.log(this.state.workshop);
+            }
+        });
+    }
+    render() {
+        const { wTitle , category , userId , photo , status , date , wGoal , tAudiance , pName , first_name , last_name , con_number  } = this.state.workshop;
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 108
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "grey lighten-1",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 109
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(RevNavbar, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 110
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 111
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 112
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "w-100",
+            style: {
+                backgroundImage: `url("https://image.freepik.com/free-photo/closeup-pen-blur-background_1421-547.jpg")`,
+                backgroundPosition: "center",
+                height: "60vh",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 113
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 123
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "blue-text text-right",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 124
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 125
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "calendar-alt",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 126
+            },
+            __self: this
+        }), " ", date), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 128
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("center", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 129
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 130
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 130
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 130
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            className: "black-text font-italic font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 131
+            },
+            __self: this
+        }, wTitle))))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 137
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 138
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 139
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 140
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "8",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 141
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            wide: true,
+            cascade: true,
+            className: "card-image",
+            style: {
+                backgroundImage: 'url(https://image.freepik.com/free-vector/white-abstract-background_23-2148882948.jpg)',
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 143
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            cascade: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 154
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 156
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "8",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 157
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 158
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 159
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 160
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 161
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "text-center",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 162
+            },
+            __self: this
+        }, "Workshop Details")))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 166
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 167
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 168
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 169
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 170
+            },
+            __self: this
+        }), " Presenter"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 174
+            },
+            __self: this
+        }, pName), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 177
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 178
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 179
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 180
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 181
+            },
+            __self: this
+        }), " Category"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 185
+            },
+            __self: this
+        }, category), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 188
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 189
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 190
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 191
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 192
+            },
+            __self: this
+        }), " WorkShop Goal"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 196
+            },
+            __self: this
+        }, wGoal), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 199
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 200
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 201
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 202
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "hand-point-right fa-lg",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 203
+            },
+            __self: this
+        }), " Audiance"))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 207
+            },
+            __self: this
+        }, tAudiance)))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 213
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 214
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 215
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 216
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 217
+            },
+            __self: this
+        }, "Contact Details"))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 220
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 221
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 222
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 223
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "user",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 224
+            },
+            __self: this
+        }), " ", first_name, " ", last_name))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 229
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 230
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 231
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "envelope",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 232
+            },
+            __self: this
+        }), " ", userId))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 236
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 237
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 238
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "phone",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 239
+            },
+            __self: this
+        }), " ", con_number))))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardHeader, {
+            className: "form-header blue-grey rounded",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 245
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold red-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 246
+            },
+            __self: this
+        }, "Attention !"), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 249
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardText, {
+            className: "white-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 251
+            },
+            __self: this
+        }, "Read carefully before get Action to this research paper"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-success btn-sm",
+            type: "type",
+            style: {
+                marginTop: "15px"
+            },
+            onClick: this.onApprove,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 254
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            class: "nav-link white-text",
+            to: "/rev/workshop/reviewed",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 255
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "file-alt",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 255
+            },
+            __self: this
+        }), " APPROVE")), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-danger btn-sm",
+            type: "type",
+            style: {
+                marginTop: "15px"
+            },
+            onClick: this.onDecline,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 257
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            class: "nav-link white-text",
+            to: "/rev/workshop/reviewed",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 258
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "file-alt",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 258
+            },
+            __self: this
+        }), " DECLINE"))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 263
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 263
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 263
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 263
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 263
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 269
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 270
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            narrow: true,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 271
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            className: "winter-neva-gradient",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 272
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold red-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 273
+            },
+            __self: this
+        }, "Attention !"), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 276
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardText, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 278
+            },
+            __self: this
+        }, "According to the US Copyright Office, copyright applies to original works of creative expression that are captured in a tangible form. The copyright goes to the original creator of the work, who can choose to sell their rights to other parties."), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 281
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            className: "pink-text",
+            href: photo,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 282
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "file-download",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 283
+            },
+            __self: this
+        }), " DOWNLOAD WORKSHOP PROPOSAL")))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 288
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 289
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            narrow: true,
+            className: "card-image",
+            style: {
+                backgroundImage: 'url(https://mdbcdn.b-cdn.net/img/Photos/Others/pricing-table7.jpg)',
+                width: '28rem',
+                height: '100vh',
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 290
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 301
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 302
+            },
+            __self: this
+        }, "Join Our Workshop Community"), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 305
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardText, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 306
+            },
+            __self: this
+        }, "Read before Accept this Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam."), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 311
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 312
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            md: "12",
+            className: "d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 314
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "!#",
+            className: "px-2 fa-lg li-ic",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 315
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            fab: true,
+            icon: "linkedin-in",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 316
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "!#",
+            className: "px-2 fa-lg tw-ic",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 319
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            fab: true,
+            icon: "twitter",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 320
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "!#",
+            className: "px-2 fa-lg fb-ic",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 323
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            fab: true,
+            icon: "facebook-f",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 324
+            },
+            __self: this
+        })))))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 333
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement(_revFooterDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\workshop\\RevApproveWorkshop.jsx",
+                lineNumber: 337
+            },
+            __self: this
+        }))));
+    }
+}
+exports.default = RevApproveWorkshop;
+exports.default = RevApproveWorkshop;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

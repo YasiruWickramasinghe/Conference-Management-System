@@ -1,0 +1,127 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _revHorLine = require("../RevHorLine");
+var _revHorLineDefault = parcelHelpers.interopDefault(_revHorLine);
+class RevOldResearchDescription extends _react.Component {
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container text-light ",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 8
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center black-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 9
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            className: "font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 10
+            },
+            __self: this
+        }, "Old Research papers")), /*#__PURE__*/ _reactDefault.default.createElement(_revHorLineDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 12
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row row-cols-1 row-cols-md-1 g-4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 13
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 14
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "card bg-dark border-primary",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 15
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "card-body",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 17
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-3",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 18
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "red-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 19
+            },
+            __self: this
+        }, "Instruction"), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            className: "hr-light",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 20
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-9",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 22
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "white-text",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 23
+            },
+            __self: this
+        }, " papers on those issues should really only be included if they have some relevance to educational technology. Please review the conference Scope & Topics.he reviews help the Executive Committee select which papers to accept and reject. ..."))))))), /*#__PURE__*/ _reactDefault.default.createElement(_revHorLineDefault.default, {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\research\\RevOldResearchDescription.jsx",
+                lineNumber: 31
+            },
+            __self: this
+        })));
+    }
+}
+exports.default = RevOldResearchDescription;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

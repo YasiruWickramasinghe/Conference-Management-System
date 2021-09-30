@@ -1,0 +1,226 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const caption = ()=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 5
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        width: "100%",
+        class: "bg-dark",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 6
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "col-sm-8 m-auto",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 7
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        id: "slider4",
+        class: "carousel slide mb-5",
+        "data-ride": "carousel",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 8
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("ol", {
+        class: "carousel-indicators",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        class: "active",
+        "data-target": "#slider4",
+        "data-slide-to": "0",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 10
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        "data-target": "#slider4",
+        "data-slide-to": "1",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 11
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+        "data-target": "#slider4",
+        "data-slide-to": "2",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 12
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "carousel-inner",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 14
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "carousel-item active",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 15
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+        class: "d-block img-fluid",
+        src: require("url:./img/1.jpg"),
+        alt: "First Slide",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 16
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "carousel-caption d-none d-md-block",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 21
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 22
+        },
+        __self: undefined
+    }, "Slide One"), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 23
+        },
+        __self: undefined
+    }, "A conference is a meeting, often lasting a few days, which is organized on a particular subject or to bring together people who have a common interest. ... A conference is a meeting at which formal discussions take place."))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "carousel-item",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 31
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+        class: "d-block img-fluid",
+        src: require("url:./img/2.jpg"),
+        alt: "Second Slide",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 32
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "carousel-caption d-none d-md-block",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 37
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 38
+        },
+        __self: undefined
+    }, "Slide Two"), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 39
+        },
+        __self: undefined
+    }, "A conference is a meeting, often lasting a few days, which is organized on a particular subject or to bring together people who have a common interest. ... A conference is a meeting at which formal discussions take place."))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "carousel-item",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 47
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+        class: "d-block img-fluid",
+        src: require("url:./img/3.jpg"),
+        alt: "Third Slide",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 48
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "carousel-caption d-none d-md-block",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 53
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 54
+        },
+        __self: undefined
+    }, "Slide Three"), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 55
+        },
+        __self: undefined
+    }, "A conference is a meeting, often lasting a few days, which is organized on a particular subject or to bring together people who have a common interest. ... A conference is a meeting at which formal discussions take place.")))), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "#slider4",
+        class: "carousel-control-prev",
+        "data-slide": "prev",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 65
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        class: "carousel-control-prev-icon",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 66
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "#slider4",
+        class: "carousel-control-next",
+        "data-slide": "next",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 69
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        class: "carousel-control-next-icon",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\caption\\caption.js",
+            lineNumber: 70
+        },
+        __self: undefined
+    })))))));
+};
+exports.default = caption;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

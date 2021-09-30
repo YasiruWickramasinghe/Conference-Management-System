@@ -1,0 +1,31 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "register", ()=>register
+);
+parcelHelpers.export(exports, "login", ()=>login
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+const register = (newResearcher)=>{
+    return _axiosDefault.default.post('http://localhost:8000/registerReviewer', {
+        first_name: newResearcher.first_name,
+        last_name: newResearcher.last_name,
+        email: newResearcher.email,
+        password: newResearcher.password
+    }).then((res)=>{
+        window.alert("Registered Successfully");
+        return res.data;
+    });
+};
+const login = (researcher)=>{
+    return _axiosDefault.default.post('http://localhost:8000/loginReviewer', {
+        email: researcher.email,
+        password: researcher.password
+    }).then((res)=>{
+        localStorage.setItem('reviewertoken', res.data);
+        console.log(res.data);
+        return res.data;
+    }).catch((err)=>{
+        console.log(err);
+    });
+};

@@ -1,0 +1,222 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _s = $RefreshSig$();
+const CreateSpeaker = ()=>{
+    _s();
+    const [newSpeaker, setNewSpeaker] = _react.useState({
+        name: "",
+        position: "",
+        description: "",
+        charge: 0,
+        photo: ""
+    });
+    const onSubmit = (e)=>{
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("photo", newSpeaker.photo);
+        formData.append("name", newSpeaker.name);
+        formData.append("position", newSpeaker.position);
+        formData.append("description", newSpeaker.description);
+        formData.append("charge", newSpeaker.charge);
+        _axiosDefault.default.post("http://localhost:5001/users/fileupload", formData).then((res)=>{
+            console.log(res);
+            alert("inserted");
+            window.location = "/list-speaker";
+        }).catch((err)=>{
+            console.log(err);
+        });
+    };
+    const logout = (e)=>{
+        localStorage.removeItem("EditorLoggedIn");
+        window.location = "/";
+    };
+    const onChange = (e)=>{
+        setNewSpeaker({
+            ...newSpeaker,
+            [e.target.name]: e.target.value
+        });
+    };
+    const onPhoto = (e)=>{
+        setNewSpeaker({
+            ...newSpeaker,
+            photo: e.target.files[0]
+        });
+    };
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "container",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 48
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        className: "btn btn-primary",
+        onClick: logout,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 49
+        },
+        __self: undefined
+    }, "Logout"), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 53
+        },
+        __self: undefined
+    }, "Create speaker"), /*#__PURE__*/ _reactDefault.default.createElement("form", {
+        onSubmit: onSubmit,
+        encType: "multipart/form-data",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 54
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "mb-3",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 55
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "subjectName",
+        className: "form-label",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 56
+        },
+        __self: undefined
+    }, "Name"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "name",
+        name: "name",
+        value: newSpeaker.name,
+        onChange: onChange,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 59
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "mb-3",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 69
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "subjectName",
+        className: "form-label",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 70
+        },
+        __self: undefined
+    }, "Position"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "position",
+        name: "position",
+        value: newSpeaker.position,
+        onChange: onChange,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 73
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "mb-3",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 83
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "subjectName",
+        className: "form-label",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 84
+        },
+        __self: undefined
+    }, "Description"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "description",
+        name: "description",
+        value: newSpeaker.description,
+        onChange: onChange,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 87
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "mb-3",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 97
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "subjectName",
+        className: "form-label",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 98
+        },
+        __self: undefined
+    }, "Charge"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "charge",
+        name: "charge",
+        value: newSpeaker.charge,
+        onChange: onChange,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 101
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "file",
+        accept: ".png, .jpg, .jpeg, .pdf, .pptx",
+        name: "photo",
+        onChange: onPhoto,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 111
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        type: "submit",
+        className: "btn btn-primary",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\editor\\create\\createspeaker.js",
+            lineNumber: 118
+        },
+        __self: undefined
+    }, "Submit"))));
+};
+_s(CreateSpeaker, "5rVjr/r4SkLeDGhI8IXz1CLjvV4=");
+_c = CreateSpeaker;
+exports.default = CreateSpeaker;
+var _c;
+$RefreshReg$(_c, "CreateSpeaker");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

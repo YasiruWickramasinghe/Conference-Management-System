@@ -1,0 +1,200 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _revHomeImg = require("./RevHomeImg");
+var _revHomeImgDefault = parcelHelpers.interopDefault(_revHomeImg);
+var _revHomeDescription = require("./RevHomeDescription");
+var _revHomeDescriptionDefault = parcelHelpers.interopDefault(_revHomeDescription);
+var _revHomeSummary = require("./RevHomeSummary");
+var _revHomeSummaryDefault = parcelHelpers.interopDefault(_revHomeSummary);
+var _revHomeDescription2 = require("./RevHomeDescription2");
+var _revHomeDescription2Default = parcelHelpers.interopDefault(_revHomeDescription2);
+var _revHomeLatestReview = require("./RevHomeLatestReview");
+var _revHomeLatestReviewDefault = parcelHelpers.interopDefault(_revHomeLatestReview);
+var _revHorLine = require("../RevHorLine");
+var _revHorLineDefault = parcelHelpers.interopDefault(_revHorLine);
+var _revFooter = require("../RevFooter");
+var _revFooterDefault = parcelHelpers.interopDefault(_revFooter);
+class RevHome extends _react.Component {
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 15
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "grey lighten-1",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 17
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 18
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_revHomeImgDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 19
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 21
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 22
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 23
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_revHomeDescriptionDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 24
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 26
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_revHorLineDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 27
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 28
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_revHomeSummaryDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 30
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 32
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_revHorLineDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 33
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 34
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 35
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_revHomeDescription2Default.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 36
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 38
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_revHorLineDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 39
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 40
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 41
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_revHomeLatestReviewDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 42
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 45
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_revFooterDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHome.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        }))));
+    }
+}
+exports.default = RevHome;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

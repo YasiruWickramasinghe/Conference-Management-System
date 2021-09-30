@@ -1,0 +1,211 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+var _workshopCardGroup = require("./Dashbord Acessories/WorkshopCardGroup");
+var _workshopCardGroupDefault = parcelHelpers.interopDefault(_workshopCardGroup);
+var _descriptionRpaper1 = require("./Dashbord Acessories/DescriptionRpaper1");
+var _descriptionRpaper1Default = parcelHelpers.interopDefault(_descriptionRpaper1);
+var _descriptionRpaper2 = require("./Dashbord Acessories/DescriptionRpaper2");
+var _descriptionRpaper2Default = parcelHelpers.interopDefault(_descriptionRpaper2);
+var _mdbreact = require("mdbreact");
+class UserDashboard extends _react.Component {
+    constructor(){
+        super();
+        this.state = {
+            first_name: "",
+            last_name: "",
+            con_number: "",
+            register_fee: "",
+            position: "",
+            email: "",
+            password: ""
+        };
+    }
+    componentDidMount() {
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        // console.log(jwt_decode(token));
+        this.setState({
+            first_name: decode.first_name,
+            last_name: decode.last_name,
+            con_number: decode.con_number,
+            register_fee: decode.register_fee,
+            position: decode.position,
+            email: decode.email
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 38
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBJumbotron, {
+            style: {
+                padding: 0
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 39
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            className: "text-white text-center py-5 px-4",
+            style: {
+                backgroundImage: `url(https://mdbcdn.b-cdn.net/img/Photos/Others/gradient1.jpg)`,
+                display: "flex",
+                height: "42rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 40
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            className: "py-5",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 48
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardTitle, {
+            className: "p-responsive pt-3 m-5 font-bold",
+            style: {
+                fontSize: "3rem",
+                textTransform: "capitalize"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 49
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("strong", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 53
+            },
+            __self: this
+        }, "Hi ", this.state.first_name, " Share your experience as the", " ", this.state.position)), /*#__PURE__*/ _reactDefault.default.createElement("h6", {
+            style: {
+                color: "GrayText"
+            },
+            className: "mx-5 mb-5",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 58
+            },
+            __self: this
+        }, "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem, optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui, dolorum!"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "/workshop/workshopInsert",
+            outline: true,
+            color: "white",
+            className: "btn btn-lg btn-dark",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 64
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "clone",
+            className: "mr-2",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 70
+            },
+            __self: this
+        }), " GET START")))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 75
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 76
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_descriptionRpaper1Default.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 77
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 79
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 79
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 80
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            style: {
+                fontWeight: "3rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 81
+            },
+            __self: this
+        }, "Workshop Proposal Results"), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 81
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_workshopCardGroupDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 82
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 84
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 84
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_descriptionRpaper2Default.default, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\WorkshopPresenter\\PresenterDashboard.js",
+                lineNumber: 85
+            },
+            __self: this
+        })));
+    }
+}
+exports.default = UserDashboard;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

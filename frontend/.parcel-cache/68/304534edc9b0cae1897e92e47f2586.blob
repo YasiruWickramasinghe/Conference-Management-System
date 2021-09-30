@@ -1,0 +1,179 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+const initialstate = {
+    speakers: []
+};
+class ListSpeaker extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = initialstate;
+    }
+    componentDidMount() {
+        _axiosDefault.default.get("http://localhost:5001/speaker/getallspeaker").then((response)=>{
+            console.log(response.data.data);
+            this.setState({
+                speakers: response.data.data
+            });
+        });
+    }
+    navigatedelete(e, speakerId) {
+        _axiosDefault.default.delete("http://localhost:5001/speaker/deletespeaker/" + speakerId).then((response)=>{
+            console.log(response.data.data);
+            location.reload();
+        });
+    }
+    navigateupdate(e, speakerId) {
+        window.location = "/updatespeaker/" + speakerId;
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 37
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 38
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 39
+            },
+            __self: this
+        }, "List Category"), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 40
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("table", {
+            className: "table",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 41
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("thead", {
+            className: "thead-light",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 42
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 43
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 44
+            },
+            __self: this
+        }, "Name"), /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 45
+            },
+            __self: this
+        }, "Position"), /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 46
+            },
+            __self: this
+        }, "Charge"), /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 47
+            },
+            __self: this
+        }, "Actions")), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 49
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("tbody", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                lineNumber: 51
+            },
+            __self: this
+        }, this.state.speakers.length > 0 && this.state.speakers.map((item, index)=>/*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                key: index,
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                    lineNumber: 54
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                    lineNumber: 55
+                },
+                __self: this
+            }, item.name), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                    lineNumber: 56
+                },
+                __self: this
+            }, item.position), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                    lineNumber: 57
+                },
+                __self: this
+            }, item.charge), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                    lineNumber: 58
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+                className: "btn btn-primary",
+                onClick: (e)=>this.navigateupdate(e, item._id)
+                ,
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                    lineNumber: 59
+                },
+                __self: this
+            }, "Edit"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+                className: "btn btn-primary",
+                onClick: (e)=>this.navigatedelete(e, item._id)
+                ,
+                __source: {
+                    fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\list\\listspeaker.js",
+                    lineNumber: 65
+                },
+                __self: this
+            }, "Delete")))
+        )))));
+    }
+}
+exports.default = ListSpeaker;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

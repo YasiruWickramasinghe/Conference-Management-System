@@ -1,0 +1,62 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class RevHomeDescription2 extends _react.Component {
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeDescription2.jsx",
+                lineNumber: 6
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeDescription2.jsx",
+                lineNumber: 7
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-3",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeDescription2.jsx",
+                lineNumber: 8
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeDescription2.jsx",
+                lineNumber: 9
+            },
+            __self: this
+        }, "This Is Your Latest Reviewed Papers And Workshop")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-9",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeDescription2.jsx",
+                lineNumber: 11
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\reviewer\\home\\RevHomeDescription2.jsx",
+                lineNumber: 12
+            },
+            __self: this
+        }, "development and dissemination of theoretical knowledge, conceptual research, and professional practice knowledge. While there are many related issues, papers on those issues should really only be included if they have some relevance to educational technology. Please review the conference Scope & Topics.")))));
+    }
+}
+exports.default = RevHomeDescription2;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,273 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+class Home extends _react.Component {
+    constructor(){
+        super();
+        this.state = {
+            userId: '',
+            papers: []
+        };
+    }
+    componentDidMount() {
+        this.retrievePapers();
+    }
+    retrievePapers = ()=>{
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        _axiosDefault.default.get(`http://localhost:5050/rpaper/approvednotpaidpapers/${decode.email}`).then((res)=>{
+            if (res.data.success) this.setState({
+                papers: res.data.existingPapers
+            });
+        });
+    };
+    onDelete = (id)=>{
+        _axiosDefault.default.delete(`http://localhost:5050/rpaper/underRdelete/${id}`).then((res)=>{
+            alert("Delete Successfully");
+            this.retrievePapers();
+        });
+    };
+    filterData(papers, searchKey) {
+        const result = papers.filter((paper)=>paper.mTitle.toLowerCase().includes(searchKey) || // paper.category.toLowerCase().includes(searchKey) ||
+            paper.abstract.toLowerCase().includes(searchKey) || paper.status.toLowerCase().includes(searchKey) || paper.author.toLowerCase().includes(searchKey)
+        );
+        this.setState({
+            papers: result
+        });
+    }
+    handleSearchArea = (e)=>{
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        const searchKey = e.currentTarget.value;
+        _axiosDefault.default.get(`http://localhost:5050/rpaper/approvednotpaidpapers/${decode.email}`).then((res)=>{
+            if (res.data.success) this.filterData(res.data.existingPapers, searchKey);
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            style: {
+                marginTop: "5rem"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 71
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "d-flex",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 72
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "mr-auto p-2",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 73
+            },
+            __self: this
+        }, " ", /*#__PURE__*/ _reactDefault.default.createElement("h4", {
+            style: {
+                fontWeight: "bold"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 73
+            },
+            __self: this
+        }, "Pending Paid Research Papers")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "p-2",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 74
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            className: "form-control",
+            type: "search",
+            placeholder: "Search",
+            name: "searchQuery",
+            onChange: this.handleSearchArea,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 74
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("table", {
+            className: "table",
+            style: {
+                textAlign: "center"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 84
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("thead", {
+            class: "thead-dark",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 85
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 86
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            scope: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 87
+            },
+            __self: this
+        }, "#"), /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            scope: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 88
+            },
+            __self: this
+        }, "Manuscript Title"), /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            scope: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 89
+            },
+            __self: this
+        }, "Category"), /*#__PURE__*/ _reactDefault.default.createElement("th", {
+            scope: "col",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 90
+            },
+            __self: this
+        }, "Action"))), /*#__PURE__*/ _reactDefault.default.createElement("tbody", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                lineNumber: 94
+            },
+            __self: this
+        }, this.state.papers.map((papers, index)=>/*#__PURE__*/ _reactDefault.default.createElement("tr", {
+                class: "table-primary",
+                key: index,
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 96
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+                scope: "row",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 97
+                },
+                __self: this
+            }, index + 1), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 99
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+                href: `/user/paperDetail/${papers._id}`,
+                style: {
+                    textDecoration: "none"
+                },
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 100
+                },
+                __self: this
+            }, papers.mTitle)), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 107
+                },
+                __self: this
+            }, papers.category), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 109
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "row",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 110
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+                className: "btn btn-light btn-sm",
+                href: `/user/researcherPaymentForm/${papers._id}`,
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 111
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+                className: "fas fa-edit",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 115
+                },
+                __self: this
+            }), "\xa0Pay"), "\xa0", /*#__PURE__*/ _reactDefault.default.createElement("a", {
+                className: "btn btn-dark btn-sm",
+                href: `/user/viewRpaper/${papers._id}`,
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 119
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+                className: "fas fa-edit",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 123
+                },
+                __self: this
+            }), "\xa0View"), "\xa0", /*#__PURE__*/ _reactDefault.default.createElement("a", {
+                className: "btn btn-danger btn-sm mr-3",
+                href: "#",
+                onClick: ()=>this.onDelete(papers._id)
+                ,
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 127
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+                className: "fas fa-trash-alt",
+                __source: {
+                    fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\Researcher\\UserApprovedNotPaidPaper.js",
+                    lineNumber: 132
+                },
+                __self: this
+            }), "\xa0Delete"))))
+        )))));
+    }
+}
+exports.default = Home;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

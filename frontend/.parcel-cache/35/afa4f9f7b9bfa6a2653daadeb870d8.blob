@@ -1,0 +1,127 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+//import Rating from "./Rating";
+const Product = ({ product , x  })=>{
+    _s();
+    const history = _reactRouterDom.useHistory();
+    async function ApproveState() {
+        const response = await fetch(`http://localhost:5000/api/conferences/${product._id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                type: "approved"
+            })
+        });
+        history.push("/");
+    }
+    async function RejectState() {
+        const response = await fetch(`http://localhost:5000/api/conferences/${product._id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                type: "reject"
+            })
+        });
+        history.push("/");
+    }
+    //console.log(product.speakers);
+    return(/*#__PURE__*/ _reactDefault.default.createElement("tbody", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 43
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 44
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+        scope: "row",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 45
+        },
+        __self: undefined
+    }, x), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 46
+        },
+        __self: undefined
+    }, product.title), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 47
+        },
+        __self: undefined
+    }, product.speaker), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 48
+        },
+        __self: undefined
+    }, product.date), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 49
+        },
+        __self: undefined
+    }, product.type), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 50
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        onClick: ApproveState,
+        class: "btn btn-success",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 51
+        },
+        __self: undefined
+    }, "Approve")), /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 55
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        onClick: RejectState,
+        class: "btn btn-danger",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\approve\\Product.js",
+            lineNumber: 56
+        },
+        __self: undefined
+    }, "Reject")))));
+};
+_s(Product, "9cZfZ04734qoCGIctmKX7+sX6eU=", false, function() {
+    return [_reactRouterDom.useHistory];
+});
+_c = Product;
+exports.default = Product;
+var _c;
+$RefreshReg$(_c, "Product");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

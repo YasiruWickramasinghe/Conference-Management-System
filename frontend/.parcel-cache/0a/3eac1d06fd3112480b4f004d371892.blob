@@ -1,0 +1,611 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _userFunction = require("./UserFunction");
+var _reactRouterDom = require("react-router-dom");
+class UserSignup extends _react.Component {
+    constructor(){
+        super();
+        this.state = {
+            first_name: "",
+            last_name: "",
+            con_number: "",
+            register_fee: "",
+            position: "Researcher",
+            email: "",
+            password: ""
+        };
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+        console.log(this.state.position);
+    }
+    onSubmit(e) {
+        e.preventDefault();
+        const user = {
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            con_number: this.state.con_number,
+            register_fee: this.state.register_fee,
+            position: this.state.position,
+            email: this.state.email,
+            password: this.state.password
+        };
+        console.log(user);
+        _userFunction.register(user).then((res)=>{
+            if (res) this.props.history.push(`/user/userLogin`);
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "container",
+            style: {
+                marginTop: "auto"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 53
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "row py-5 mt-4 align-items-center",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 54
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "col-md-5 pr-lg-5 mb-5 mb-md-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 55
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+            src: "https://image.freepik.com/free-vector/portfolio-concept-illustration_114360-126.jpg",
+            alt: "image",
+            class: "img-fluid mb-3 d-none d-md-block",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 56
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 61
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("b", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 61
+            },
+            __self: this
+        }, "Create an Account")), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            class: "font-italic text-muted mb-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 62
+            },
+            __self: this
+        }, "Create a Account and Share your experience with us"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            class: "font-italic text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 65
+            },
+            __self: this
+        }, "Snippet By", " ", /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "https://bootstrapious.com",
+            class: "text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 67
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("u", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 68
+            },
+            __self: this
+        }, "Bootstrapious")))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "col-md-7 col-lg-6 ml-auto",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 73
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            onSubmit: this.onSubmit,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 74
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("center", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 75
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("strong", {
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 75
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+            className: "mb-5",
+            style: {
+                marginTop: "2rem"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 75
+            },
+            __self: this
+        }, "Sign Up"))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 76
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 77
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-lg-6",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 78
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group col-lg-135 ml-3 ",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 79
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group-prepend",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 80
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "input-group-text bg-white px-4 border-md border-right-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 81
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+            class: "fa fa-user text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 82
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            id: "firstName",
+            type: "text",
+            name: "first_name",
+            value: this.state.first_name,
+            onChange: this.onChange,
+            required: true,
+            placeholder: "First Name",
+            class: "form-control bg-white border-left-0 border-md",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 85
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-lg-6",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 98
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group col-lg-135 mb-4",
+            style: {
+                width: "15.5rem"
+            },
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 99
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group-prepend",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 100
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "input-group-text bg-white px-4 border-md border-right-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 101
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+            class: "fa fa-user text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 102
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            id: "lastName",
+            type: "text",
+            name: "last_name",
+            value: this.state.last_name,
+            onChange: this.onChange,
+            placeholder: "Last Name",
+            required: true,
+            class: "form-control bg-white border-left-0 border-md",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 105
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group col-lg-12 mb-4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 119
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group-prepend",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 120
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "input-group-text bg-white px-4 border-md border-right-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 121
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+            class: "fa fa-envelope text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 122
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            id: "email",
+            type: "email",
+            name: "email",
+            value: this.state.email,
+            onChange: this.onChange,
+            placeholder: "Email Address",
+            required: true,
+            class: "form-control bg-white border-left-0 border-md",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 125
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group col-lg-12 mb-4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 137
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group-prepend",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 138
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "input-group-text bg-white px-4 border-md border-right-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 139
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+            class: "fa fa-phone-square text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 140
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("select", {
+            id: "countryCode",
+            name: "phone",
+            style: {
+                maxWidth: "80px"
+            },
+            class: "custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 143
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("option", {
+            value: "",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 149
+            },
+            __self: this
+        }, "+94"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
+            value: "",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 150
+            },
+            __self: this
+        }, "+10"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
+            value: "",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 151
+            },
+            __self: this
+        }, "+15"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
+            value: "",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 152
+            },
+            __self: this
+        }, "+18")), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            id: "phoneNumber",
+            type: "tel",
+            name: "con_number",
+            value: this.state.con_number,
+            onChange: this.onChange,
+            placeholder: "Phone Number",
+            required: true,
+            class: "form-control bg-white border-md border-left-0 pl-3",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 154
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group col-lg-12 mb-4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 166
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            onChange: this.onChange,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 167
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-check form-check-inline",
+            onChange: this.onChange,
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 168
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            class: "form-check-input",
+            type: "radio",
+            name: "position",
+            id: "inlineRadio1",
+            defaultChecked: this.state.position,
+            value: "Researcher",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 169
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            class: "form-check-label",
+            for: "inlineRadio1",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 170
+            },
+            __self: this
+        }, "Researcher")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-check form-check-inline",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 172
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            class: "form-check-input",
+            type: "radio",
+            name: "position",
+            id: "inlineRadio2",
+            value: "Workshop Presenter",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 173
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            class: "form-check-label",
+            for: "inlineRadio2",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 174
+            },
+            __self: this
+        }, "Workshop Presenter")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-check form-check-inline",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 177
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            class: "form-check-input",
+            type: "radio",
+            name: "position",
+            id: "inlineRadio3",
+            value: "Attandee",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 178
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            class: "form-check-label",
+            for: "inlineRadio2",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 179
+            },
+            __self: this
+        }, "Attandee")))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group col-lg-12 mb-4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 183
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "input-group-prepend",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 184
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "input-group-text bg-white px-4 border-md border-right-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 185
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+            class: "fa fa-lock text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 186
+            },
+            __self: this
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            id: "password",
+            type: "password",
+            name: "password",
+            value: this.state.password,
+            onChange: this.onChange,
+            placeholder: "Password",
+            required: true,
+            class: "form-control bg-white border-left-0 border-md",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 189
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-group col-lg-12 d-flex justify-content-center mx-auto mb-0",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 203
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            class: "btn btn-dark btn-lg py-3 font-weight-bold",
+            type: "submit",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 204
+            },
+            __self: this
+        }, "Create your account")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "form-group col-lg-12 mx-auto d-flex align-items-center my-4",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 209
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "border-bottom w-100 ml-5",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 210
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            class: "px-2 small text-muted font-weight-bold text-muted",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 211
+            },
+            __self: this
+        }, "OR"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "border-bottom w-100 mr-5",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 214
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            class: "text-center w-100",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 217
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            class: "text-muted font-weight-bold",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 218
+            },
+            __self: this
+        }, "Already Registered?", " ", /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "/user/userLogin",
+            class: "text-primary ml-2",
+            __source: {
+                fileName: "E:\\1\\New folder\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserSignup.js",
+                lineNumber: 220
+            },
+            __self: this
+        }, "Login")))))))));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(UserSignup);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,253 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _userFunction = require("./UserFunction");
+var _mdbreact = require("mdbreact");
+var _reactRouterDom = require("react-router-dom");
+class UserLogin extends _react.Component {
+    constructor(){
+        super();
+        this.state = {
+            email: "",
+            password: ""
+        };
+    }
+    onChange = (e)=>{
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
+    onSubmit = (e)=>{
+        e.preventDefault();
+        const user = {
+            email: this.state.email,
+            password: this.state.password
+        };
+        _userFunction.login(user).then((res)=>{
+            if (res) {
+                if (res == "Workshop Presenter") {
+                    this.props.history.push(`/workshop/workshopdashboard`);
+                    location.reload();
+                } else if (res == "Researcher") {
+                    this.props.history.push(`/user/userDashboard`);
+                    location.reload();
+                }
+            }
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 43
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "content",
+            style: {
+                marginTop: "8rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 44
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 45
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 46
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-5 order-md-2",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 47
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+            src: "https://image.freepik.com/free-vector/sign-concept-illustration_114360-5267.jpg",
+            alt: "Image",
+            className: "img-fluid",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 48
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-6 contents",
+            style: {
+                marginTop: "1rem"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 54
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 55
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 56
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "mb-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 57
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 58
+            },
+            __self: this
+        }, "Sign In to ", /*#__PURE__*/ _reactDefault.default.createElement("strong", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 59
+            },
+            __self: this
+        }, "CMS")), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "mb-4",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 61
+            },
+            __self: this
+        }, "As a user you have many benifits from this service")), /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            onSubmit: this.onSubmit,
+            method: "post",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 65
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "grey-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 66
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Type your email",
+            icon: "envelope",
+            group: true,
+            type: "email",
+            name: "email",
+            value: this.state.email,
+            onChange: this.onChange,
+            validate: true,
+            required: true,
+            error: "wrong",
+            success: "right",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 67
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Type your password",
+            icon: "lock",
+            required: true,
+            group: true,
+            type: "password",
+            validate: true,
+            name: "password",
+            value: this.state.password,
+            onChange: this.onChange,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 80
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "d-flex mb-5 align-items-center",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 93
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+            className: "control control--checkbox mb-0",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 94
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "checkbox",
+            checked: "checked",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 95
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "caption pl-2",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 98
+            },
+            __self: this
+        }, "I agree terms and conditions"), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "ml-auto",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 101
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "/user/userSignup",
+            className: "forgot-pass",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 102
+            },
+            __self: this
+        }, "Register"))), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "submit",
+            value: "Log In",
+            className: "btn text-white btn-block btn-dark",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\UserAuthenticate\\UserLogin.js",
+                lineNumber: 108
+            },
+            __self: this
+        }))))))))));
+    }
+}
+exports.default = _c = _reactRouterDom.withRouter(UserLogin);
+var _c;
+$RefreshReg$(_c, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

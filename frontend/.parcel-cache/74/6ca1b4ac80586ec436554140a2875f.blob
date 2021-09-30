@@ -1,0 +1,241 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _revFunction = require("./RevFunction");
+var _mdbreact = require("mdbreact");
+class RevLogin extends _react.Component {
+    constructor(){
+        super();
+        this.state = {
+            email: "",
+            password: ""
+        };
+    }
+    onChange = (e)=>{
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
+    onSubmit = (e)=>{
+        e.preventDefault();
+        const reviewer = {
+            email: this.state.email,
+            password: this.state.password
+        };
+        _revFunction.login(reviewer).then((res)=>{
+            if (res) {
+                this.props.history.push(`/RevStartUp`);
+                localStorage.setItem("ReviwerLogin", true);
+                location.reload();
+            }
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 47
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "w-100",
+            style: {
+                backgroundImage: `url("https://media.istockphoto.com/photos/blur-image-of-many-people-are-training-in-the-big-training-room-with-picture-id979027138?k=6&m=979027138&s=170667a&w=0&h=WRLT_d_H8YWO15MuDBK-PlgMzQrWbhNJe--tvGblzYI=")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 48
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 57
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 58
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("center", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 59
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 60
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 61
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+            className: "card-image",
+            style: {
+                backgroundImage: "url(https://image.freepik.com/vector-gratis/fondo-abstracto-agua_114588-238.jpg)",
+                width: "28rem",
+                backgroundSize: "cover"
+            },
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 62
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 71
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardHeader, {
+            className: "form-header winter-neva-gradient rounded",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 72
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+            className: "my-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 73
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+            icon: "lock",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 74
+            },
+            __self: this
+        }), " LogIn")), /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            onSubmit: this.onSubmit,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 77
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "grey-text",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 78
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Your Email",
+            icon: "envelope",
+            group: true,
+            type: "text",
+            validate: true,
+            error: "wrong",
+            success: "right",
+            name: "email",
+            value: this.state.email,
+            onChange: this.onChange,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 79
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBInput, {
+            label: "Your password",
+            icon: "lock",
+            group: true,
+            type: "password",
+            validate: true,
+            name: "password",
+            value: this.state.password,
+            onChange: this.onChange,
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 91
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "text-center py-4 mt-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 102
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-lg btn-dark btn-block",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 103
+            },
+            __self: this
+        }, "Login")), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 107
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "font-small black-text mt-3",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 108
+            },
+            __self: this
+        }, "Don't have an account?", /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            href: "/rev/register",
+            className: "dark-black-text ml-1 font-weight-bold",
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 110
+            },
+            __self: this
+        }, "Sign Up")))))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 123
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 124
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+            __source: {
+                fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\login\\RevLogin.jsx",
+                lineNumber: 125
+            },
+            __self: this
+        }))))));
+    }
+}
+exports.default = RevLogin;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

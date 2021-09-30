@@ -1,0 +1,97 @@
+var helpers = require("../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _mdbreact = require("mdbreact");
+const RevStartUp = ()=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "w-100",
+        style: {
+            backgroundImage: `url("https://image.freepik.com/free-photo/man-is-sitting-laptop-dark-office_85574-2201.jpg")`,
+            height: "60vh",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover"
+        },
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 10
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 22
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 22
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 22
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 22
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 23
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 24
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "8",
+        className: "white-text text-center text-md-left mt-xl-5 mb-5",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 25
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        className: "h1-responsive font-weight-bold mt-sm-5",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 26
+        },
+        __self: undefined
+    }, "Reviewer Home"), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+        className: "hr-dark",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\reviewer\\home\\RevHomeImg.jsx",
+            lineNumber: 29
+        },
+        __self: undefined
+    }))))));
+};
+_c = RevStartUp;
+exports.default = RevStartUp;
+var _c;
+$RefreshReg$(_c, "RevStartUp");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

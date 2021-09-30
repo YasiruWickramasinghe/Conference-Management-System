@@ -1,0 +1,249 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactBootstrap = require("react-bootstrap");
+var _s = $RefreshSig$();
+const profile = ()=>{
+    _s();
+    const [profile1, setprofile] = _react.useState({
+    });
+    const history = _reactRouterDom.useHistory();
+    _react.useEffect(()=>{
+        const sendRequest = async ()=>{
+            const { data  } = await _axiosDefault.default.get(`http://localhost:5000/api/admins/${localStorage.getItem("AdminIsID")}`);
+            setprofile(data);
+            console.log(data);
+        };
+        sendRequest();
+    }, []);
+    function Logout() {
+        localStorage.removeItem("AdminIsLoggedIn");
+        history.push("/");
+        location.reload();
+    }
+    function EditProflie() {
+        history.push("/Admin/Proflie/Edit");
+    }
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 33
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("header", {
+        id: "main-header",
+        class: "py-2 bg-primary text-white",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 34
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "container",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 35
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "row",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 36
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "col-md-6",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 37
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 38
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("i", {
+        class: "fas fa-user",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 39
+        },
+        __self: undefined
+    }), " Admin Profile"))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 45
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("section", {
+        id: "profile",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 46
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "container",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 47
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "row",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 48
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "col-md-9",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 49
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "card",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 50
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "card-header",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 51
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h4", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 52
+        },
+        __self: undefined
+    }, "Profile")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "card-body",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 54
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("form", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 55
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "form-group",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 56
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        for: "name",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 57
+        },
+        __self: undefined
+    }, "Name"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        class: "form-control",
+        value: profile1.name,
+        readOnly: true,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 58
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "form-group",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 65
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        for: "email",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 66
+        },
+        __self: undefined
+    }, "Email"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "email",
+        class: "form-control",
+        value: profile1.email,
+        readOnly: true,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 67
+        },
+        __self: undefined
+    })))))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "col-md-3",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 78
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 79
+        },
+        __self: undefined
+    }, "Hello ", profile1.name), /*#__PURE__*/ _reactDefault.default.createElement("img", {
+        src: require("url:./img/avatar.png"),
+        alt: "",
+        class: "d-block img-fluid mb-3",
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 80
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        class: "btn btn-primary btn-block",
+        onClick: EditProflie,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 85
+        },
+        __self: undefined
+    }, "Edit Profile"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        class: "btn btn-danger btn-block",
+        onClick: Logout,
+        __source: {
+            fileName: "E:\\1\\New folder\\front\\src\\component\\proflie\\profile.js",
+            lineNumber: 88
+        },
+        __self: undefined
+    }, "Log Out")))))));
+};
+_s(profile, "14UIO0w256KosejQLx9t74/EV7g=", false, function() {
+    return [_reactRouterDom.useHistory];
+});
+exports.default = profile;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

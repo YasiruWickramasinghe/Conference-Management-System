@@ -1,0 +1,618 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _coverImage = require("../Decorate Component/CoverImage");
+var _coverImageDefault = parcelHelpers.interopDefault(_coverImage);
+var _attention = require("../Decorate Component/Attention");
+var _attentionDefault = parcelHelpers.interopDefault(_attention);
+var _socialMedia = require("../Decorate Component/SocialMedia");
+var _socialMediaDefault = parcelHelpers.interopDefault(_socialMedia);
+var _reactRouterDom = require("react-router-dom");
+var _mdbreact = require("mdbreact");
+var _jwtDecode = require("jwt-decode");
+var _jwtDecodeDefault = parcelHelpers.interopDefault(_jwtDecode);
+var _s = $RefreshSig$();
+const User = ()=>{
+    _s();
+    const [newUser, setNewUser] = _react.useState({
+        photo: "",
+        mTitle: "",
+        category: "",
+        abstract: "",
+        keyword: "",
+        author: "",
+        userId: "",
+        first_name: "",
+        last_name: "",
+        con_number: ""
+    });
+    _react.useEffect(()=>{
+        const token = localStorage.usertoken;
+        const decode = _jwtDecodeDefault.default(token);
+        setNewUser({
+            userId: decode.email,
+            first_name: decode.first_name,
+            last_name: decode.last_name,
+            con_number: decode.con_number
+        });
+        console.log(newUser.userId);
+    }, []);
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("photo", newUser.photo);
+        formData.append("mTitle", newUser.mTitle);
+        formData.append("category", newUser.category);
+        formData.append("abstract", newUser.abstract);
+        formData.append("keyword", newUser.keyword);
+        formData.append("author", newUser.author);
+        formData.append("userId", newUser.userId);
+        formData.append("first_name", newUser.first_name);
+        formData.append("last_name", newUser.last_name);
+        formData.append("con_number", newUser.con_number);
+        console.log(formData);
+        _axiosDefault.default.post("http://localhost:5050/rpaper/submit", formData).then((res)=>{
+            alert("Paper Added Successfully!");
+            setNewUser({
+                photo: "",
+                mTitle: "",
+                category: "",
+                abstract: "",
+                keyword: "",
+                author: ""
+            });
+            undefined.props.history.push(`/user/userPapersRetrieve`);
+            console.log(res);
+            location.reload();
+        }).catch((err)=>{
+            console.log(err);
+        });
+    };
+    const handleChange = (e)=>{
+        setNewUser({
+            ...newUser,
+            [e.target.name]: e.target.value
+        });
+    };
+    const handlePhoto = (e)=>{
+        setNewUser({
+            ...newUser,
+            photo: e.target.files[0]
+        });
+    };
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 94
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        style: {
+            marginTop: "3rem"
+        },
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 95
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "row",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 96
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_coverImageDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 97
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "row",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 99
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 100
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 101
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 102
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "8",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 103
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+        wide: true,
+        cascade: true,
+        className: "card-image",
+        style: {
+            backgroundImage: "url(https://image.freepik.com/free-vector/white-abstract-background_23-2148882948.jpg)",
+            backgroundSize: "cover"
+        },
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 104
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+        cascade: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 115
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 116
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "8",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 117
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBContainer, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 118
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 119
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "12",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 120
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCard, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 121
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "header pt-3 mdb-color lighten-3",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 122
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+        className: "d-flex justify-content-center",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 123
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        className: "white-text mb-3 pt-3 font-weight-bold",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 124
+        },
+        __self: undefined
+    }, "Research Paper"))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCardBody, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 129
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("form", {
+        onSubmit: handleSubmit,
+        encType: "multipart/form-data",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 130
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "defaultFormCardNameEx",
+        className: "grey-text font-weight-light mt-3",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 134
+        },
+        __self: undefined
+    }, "Paper Title"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        id: "defaultFormCardNameEx",
+        className: "form-control",
+        name: "mTitle",
+        required: true,
+        value: newUser.mTitle,
+        onChange: handleChange,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 140
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 149
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "defaultFormCardNameEx",
+        className: "grey-text font-weight-light",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 150
+        },
+        __self: undefined
+    }, "Author"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        id: "defaultFormCardNameEx",
+        className: "form-control",
+        name: "author",
+        required: true,
+        value: newUser.author,
+        onChange: handleChange,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 156
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 166
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "defaultFormCardNameEx",
+        className: "grey-text font-weight-light",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 167
+        },
+        __self: undefined
+    }, "Category"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        id: "defaultFormCardNameEx",
+        className: "form-control",
+        name: "category",
+        required: true,
+        value: newUser.category,
+        onChange: handleChange,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 173
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 183
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "defaultFormContactMessageEx",
+        className: "grey-text",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 184
+        },
+        __self: undefined
+    }, "Keyword"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "text",
+        id: "defaultFormCardNameEx",
+        className: "form-control",
+        name: "keyword",
+        required: true,
+        value: newUser.keyword,
+        onChange: handleChange,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 190
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 200
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        htmlFor: "defaultFormContactMessageEx",
+        className: "grey-text",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 201
+        },
+        __self: undefined
+    }, "Abstract"), /*#__PURE__*/ _reactDefault.default.createElement("textarea", {
+        type: "text",
+        id: "defaultFormContactMessageEx",
+        className: "form-control",
+        rows: "3",
+        name: "abstract",
+        required: true,
+        value: newUser.abstract,
+        onChange: handleChange,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 207
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 217
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "file",
+        accept: ".png, .jpg, .jpeg, .pdf, .pptx",
+        name: "photo",
+        onChange: handlePhoto,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 219
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "text-center py-4 mt-3",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 226
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        type: "submit",
+        class: "btn btn-primary",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 227
+        },
+        __self: undefined
+    }))))))))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "4",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 239
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTable, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 240
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableHead, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 241
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 242
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("th", {
+        className: "font-weight-bold",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 243
+        },
+        __self: undefined
+    }, "Contact Details"))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBTableBody, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 248
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 249
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 250
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 251
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+        icon: "user",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 252
+        },
+        __self: undefined
+    }), " ", newUser.first_name, " ", newUser.last_name))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 258
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 259
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 260
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+        icon: "envelope",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 261
+        },
+        __self: undefined
+    }), " ", newUser.userId))), /*#__PURE__*/ _reactDefault.default.createElement("tr", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 265
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("td", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 266
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        className: "p-1",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 267
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBIcon, {
+        icon: "phone",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 268
+        },
+        __self: undefined
+    }), newUser.con_number))))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 275
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 276
+        },
+        __self: undefined
+    }))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 279
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 280
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 281
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 282
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 283
+        },
+        __self: undefined
+    })))), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "4",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 288
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 289
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_attentionDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 290
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 292
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_mdbreact.MDBRow, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 293
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_socialMediaDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 294
+        },
+        __self: undefined
+    })))), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\component\\USER\\component\\Researcher\\RpaperInsert.js",
+            lineNumber: 298
+        },
+        __self: undefined
+    }))))));
+};
+_s(User, "oUaXkJDbORlkDgcEgY2WO95PYzM=");
+_c = User;
+exports.default = _c1 = _reactRouterDom.withRouter(User);
+var _c, _c1;
+$RefreshReg$(_c, "User");
+$RefreshReg$(_c1, "%default%");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,218 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _s = $RefreshSig$();
+const editorlogin = ()=>{
+    _s();
+    const emailRef = _react.useRef("");
+    const passwordRef = _react.useRef("");
+    const [login, setlogin] = _react.useState();
+    const history = _reactRouterDom.useHistory();
+    function submitHandler(event) {
+        event.preventDefault();
+        Login();
+    }
+    function Login() {
+        _axiosDefault.default.post("http://localhost:5001/editor/logineditor", {
+            email: emailRef.current.value,
+            password: passwordRef.current.value
+        }).then((res)=>{
+            if (res.status === 200) {
+                setlogin(res);
+                localStorage.setItem("EditorLoggedIn", true);
+                history.push(`/`);
+                location.reload();
+            } else alert("Registation failed please try again");
+            setlogin(res);
+        });
+    }
+    console.log(login);
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 39
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 40
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 41
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 42
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "d-flex justify-content-center row-hl",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 43
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "col-lg-6 ",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 44
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "card bg-dark text-light card-form",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 45
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "card-body",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 46
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "text-center ",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 47
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 48
+        },
+        __self: undefined
+    }, "Login"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 49
+        },
+        __self: undefined
+    }, "Please fill out this form to login")), /*#__PURE__*/ _reactDefault.default.createElement("form", {
+        onSubmit: submitHandler,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 51
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "form-group",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 52
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        for: "Email",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 53
+        },
+        __self: undefined
+    }, "Email"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        className: "form-control",
+        type: "text",
+        id: "Email",
+        placeholder: "Enter name",
+        ref: emailRef,
+        required: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 54
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "form-group",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 63
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
+        for: "Password",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 64
+        },
+        __self: undefined
+    }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+        className: "form-control",
+        type: "password",
+        id: "name",
+        placeholder: "Enter password",
+        ref: passwordRef,
+        required: true,
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 65
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "form-group",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 74
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        className: "form-control primary",
+        type: "submit",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 75
+        },
+        __self: undefined
+    }, "Login")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "form-group",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 79
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: "editorregister",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 80
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        className: "form-control ",
+        type: "button",
+        __source: {
+            fileName: "C:\\Users\\Zaman\\zaman\\AF\\front\\src\\editor\\login\\editorlogin.js",
+            lineNumber: 81
+        },
+        __self: undefined
+    }, "Register"))))))))));
+};
+_s(editorlogin, "tsQ7cFAih/FEvQ1IFr9qgxX+Jzo=", false, function() {
+    return [_reactRouterDom.useHistory];
+});
+exports.default = editorlogin;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

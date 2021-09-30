@@ -1,0 +1,1 @@
+module.exports = require('./bundle-url').getBundleURL() + "avatar.HASH_REF_bdb69624c467cb090d2f8a744a507db0.png";
